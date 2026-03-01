@@ -221,7 +221,7 @@ POTENZA.raindrops = function () {
           $("#ajaxloader").show();
           $("#contactform").hide();
           $.ajax({
-            url:'php/contact-form.php',
+            url:'api/contact',
             data:$(this).serialize(),
             type:'post',
             success:function(response){
@@ -620,7 +620,7 @@ POTENZA.masonry = function () {
 
               $.ajax({
                  type: 'POST',
-                 url: 'php/mailchimp-action.php',
+                 url: 'api/mailchimp',
                  data: {url:url},
                  dataType: 'json',
                  success: function(data){
