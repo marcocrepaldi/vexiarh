@@ -64,8 +64,7 @@ export default function Home() {
           id="hero"
           className="slider-parallax height-100vh banner-agency-02 parallax d-flex align-items-center"
           style={{
-            background: "linear-gradient(135deg, rgba(0,91,99,0.85), rgba(0,91,99,0.55)), url(/demo-one-page/agency-02/images/bg/01.jpg)",
-            backgroundSize: "cover",
+            background: "url(/demo-one-page/agency-02/images/bg/01.jpg) center center / cover no-repeat",
             color: "#fff",
           }}
         >
