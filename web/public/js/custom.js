@@ -724,8 +724,11 @@ POTENZA.wowanimation = function () {
        Google.maps
 *************************/
 POTENZA.googlemaps = function () {
-  if ($('.g-map').exists()) {
-    loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBubj3ZoKHI6RsGF0JFDFgcnLrpgD-0268', function() {
+  if (!($('.g-map').exists())) return;
+  var _mapKey = window.MAPS_API_KEY || '';
+  if(!_mapKey) return;
+
+  loadScript('https://maps.googleapis.com/maps/api/js?key=' + _mapKey, function() {
       $('.g-map').each(function(){
             var id = $(this).attr('id');
             var color = $(this).attr('data-type');
