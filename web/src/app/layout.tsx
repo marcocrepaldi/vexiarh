@@ -24,6 +24,11 @@ export default function RootLayout({
         <link rel="stylesheet" href="/demo-one-page/agency-02/css/agency-02.css" />
         <link rel="stylesheet" href="/css/responsive.css" />
         <link rel="stylesheet" href="/css/skins/skin-red.css" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.MAPS_API_KEY = "${process.env.NEXT_PUBLIC_MAPS_API_KEY || ''}";`,
+          }}
+        />
       </head>
       <body>{children}</body>
     </html>
