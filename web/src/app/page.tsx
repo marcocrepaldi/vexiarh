@@ -1,6 +1,13 @@
+"use client";
+import { useEffect } from "react";
 import Script from "next/script";
 
 export default function Home() {
+  useEffect(() => {
+    const pre = document.getElementById("pre-loader");
+    if (pre) pre.style.display = "none";
+  }, []);
+
   return (
     <>
       <div className="wrapper">
@@ -470,8 +477,8 @@ export default function Home() {
       </div>
 
       <Script src="/js/jquery-3.6.0.min.js" strategy="beforeInteractive" />
-      <Script src="/js/plugins-jquery.js" strategy="afterInteractive" />
-      <Script id="plugin_path" strategy="afterInteractive">{`var plugin_path = '/js/';`}</Script>
+      <Script id="plugin_path" strategy="beforeInteractive">{`var plugin_path = '/js/';`}</Script>
+      <Script src="/js/plugins-jquery.js" strategy="beforeInteractive" />
       <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
       <Script src="/js/custom.js" strategy="afterInteractive" />
     </>
