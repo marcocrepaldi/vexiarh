@@ -725,7 +725,7 @@ POTENZA.wowanimation = function () {
 *************************/
 POTENZA.googlemaps = function () {
   if ($('.g-map').exists()) {
-    loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBPohe84NhPXKlVEVXxOsR9HQJkBpa6Z0o', function() {
+    loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBubj3ZoKHI6RsGF0JFDFgcnLrpgD-0268', function() {
       $('.g-map').each(function(){
             var id = $(this).attr('id');
             var color = $(this).attr('data-type');
