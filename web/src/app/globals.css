@@ -13,3 +13,29 @@ html, body {
 a {
   text-decoration: none;
 }
+
+/* Keep the top menu visible while scrolling/anchoring */
+.header.default {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1200;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Avoid content hidden behind the fixed header */
+body {
+  padding-top: 88px;
+}
+@media (max-width: 991px) {
+  body {
+    padding-top: 72px;
+  }
+}
+
+/* Anchor targets keep spacing below the fixed header */
+section {
+  scroll-margin-top: 96px;
+}
