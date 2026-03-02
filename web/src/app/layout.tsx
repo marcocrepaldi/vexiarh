@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-css-tags, @next/next/no-page-custom-font */
 import type { Metadata } from "next";
+import Image from "next/image";
 import "./globals.css";
 
 const siteName = "VexiaRH";
@@ -61,7 +62,21 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/responsive.css" />
         <link rel="stylesheet" href="/css/skins/skin-red.css" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <a
+          href="https://wa.me/5511985266582?text=Quero%20saber%20mais%20sobre%20a%20VexiaRH"
+          className="whatsapp-btn"
+          aria-label="Falar com VexiaRH no WhatsApp"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span className="whatsapp-icon">
+            <Image src="/demo-one-page/agency-02/images/whatsup/01.jpg" alt="WhatsApp" width={20} height={20} />
+          </span>
+          <span>WhatsApp</span>
+        </a>
+      </body>
     </html>
   );
 }
