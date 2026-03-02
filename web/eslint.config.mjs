@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendor / legacy assets we don't lint
+    "public/js/**",
   ]),
 ]);
 

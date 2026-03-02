@@ -33,10 +33,11 @@ export async function POST(req: Request) {
       return htmlResponse('<p class="mc-success-notice" style="color:#34A853">Successfully Subscribed. Please check confirmation email.</p>');
     }
 
-    const data = await res.json().catch(() => ({} as any));
-    const detail = (data as any)?.detail || "Subscription failed.";
+    type MailchimpError = { detail?: string };
+    const data: MailchimpError = await res.json().catch(() => ({} as MailchimpError));
+    const detail = data?.detail || "Subscription failed.";
     return htmlResponse(`<p class="mc-error-notice">${detail}</p>`, 400);
-  } catch (error) {
+  } catch {
     return htmlResponse('<p class="mc-error-notice">Unexpected error subscribing. Try again.</p>', 500);
   }
 }

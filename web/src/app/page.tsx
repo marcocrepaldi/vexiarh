@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 
 const primary = "#005B63";
@@ -34,10 +36,8 @@ export default function Home() {
     <>
       <div className="wrapper">
         <div id="pre-loader">
-          <img src="/images/pre-loader/loader-10.svg" alt="loading" />
+          <Image src="/images/pre-loader/loader-10.svg" alt="loading" width={80} height={80} priority />
         </div>
-
-        <section id="hero"></section>
 
         <header id="header" className="header default text-dark">
           <div className="menu" id="onepagenav">
@@ -49,7 +49,7 @@ export default function Home() {
                       <ul className="menu-logo">
                         <li>
                           <a href="#hero">
-                            <img id="logo_img" src="/demo-one-page/agency-02/images/logo.png" alt="VexiaRH" />
+                            <Image id="logo_img" src="/demo-one-page/agency-02/images/logo.png" alt="VexiaRH" width={148} height={42} priority />
                           </a>
                         </li>
                       </ul>
@@ -69,6 +69,9 @@ export default function Home() {
                           </li>
                           <li>
                             <a href="#cta">Pilotar</a>
+                          </li>
+                          <li>
+                            <Link href="/comunicacao">Conheça a Plataforma</Link>
                           </li>
                         </ul>
                       </div>
