@@ -89,21 +89,62 @@ section {
   transform: translateY(0);
 }
 
+/* Remove overlay esfumado do hero da agency-02 */
+.banner-agency-02::before {
+  display: none !important;
+}
+
+.hero-copy {
+  background: rgba(0, 26, 31, 0.62);
+  color: #f8fafc;
+  padding: 24px 26px;
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  max-width: 560px;
+}
+
+.hero-title {
+  color: #f8fafc;
+  line-height: 1.15;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.hero-kicker {
+  color: #f7c948;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.hero-sub {
+  color: #e2e8f0;
+  line-height: 1.55;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hero-actions .button {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
 /* Mobile hamburger menu */
 .mobile-toggle {
   display: none;
+  flex-direction: column;
+  gap: 6px;
   background: transparent;
   border: 0;
-  padding: 10px;
+  padding: 12px;
   margin-left: auto;
 }
 
 .mobile-toggle span {
   display: block;
-  width: 20px;
+  width: 22px;
   height: 2px;
   background: #1f2937;
-  margin: 3px 0;
+  margin: 0;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -117,16 +158,31 @@ section {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 48px;
+    height: 48px;
+    background: #0b3b1a;
+    border-radius: 12px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
     margin-left: 12px;
   }
 
   .mobile-toggle span:nth-child(1) {
-    margin-top: 4px;
+    margin-top: 0;
+  }
+
+  .mobile-toggle span {
+    background: #ffffff;
+  }
+
+  /* Ícone hambúrguer → X quando aberto */
+  .mobile-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .mobile-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .mega-menu .menu-links {

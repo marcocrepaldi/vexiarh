@@ -67,7 +67,7 @@ export default function Home() {
                       </ul>
                         <div className="menu-bar">
                           <button
-                            className="mobile-toggle"
+                            className={`mobile-toggle ${menuOpen ? "open" : ""}`}
                             type="button"
                             aria-label="Abrir menu"
                             aria-expanded={menuOpen}
@@ -130,16 +130,16 @@ export default function Home() {
             <div className="container">
               <div className="row">
                 <div className="col-lg-8 col-md-10">
-                  <div className="slider-content text-start">
-                    <p className="mb-10" style={{ color: accent, letterSpacing: 1 }}>Sistema Operacional de Engajamento</p>
-                    <h1 className="mt-10" style={{ fontWeight: 800 }}>
+                  <div className="slider-content text-start hero-copy">
+                    <p className="mb-10 hero-kicker">Sistema Operacional de Engajamento</p>
+                    <h1 className="mt-10 hero-title">
                       VexiaRH: Onde o seu talento encontra o futuro da sua carreira.
                     </h1>
-                    <p className="mt-20 lead">
+                    <p className="mt-20 hero-sub">
                       Reconhecimento diário, recompensas tangíveis e desenvolvimento contínuo conectados às metas e valores da sua
                       empresa. Cultura em ação, todos os dias.
                     </p>
-                    <div className="mt-30">
+                    <div className="mt-30 hero-actions">
                       <a className="button" href="#cta" style={{ background: accent, borderColor: accent }}>
                         Ver uma demo guiada
                       </a>
@@ -175,7 +175,7 @@ export default function Home() {
               />
               <Feature
                 icon="fa-graduation-cap"
-                title="Harper Academy"
+                title="VexiaRH Academy"
                 text="Treinamentos, trilhas de carreira e certificações com visibilidade do seu avanço."
               />
               <Feature
