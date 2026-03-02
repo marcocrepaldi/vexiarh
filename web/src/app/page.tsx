@@ -1,12 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const primary = "#005B63";
 const accent = "#F18921";
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const pre = document.getElementById("pre-loader");
     if (pre) pre.style.display = "none";
@@ -32,6 +34,16 @@ export default function Home() {
     return () => links.forEach((link) => link.removeEventListener("click", handler));
   }, []);
 
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 991 && menuOpen) setMenuOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [menuOpen]);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <>
       <div className="wrapper">
@@ -53,28 +65,51 @@ export default function Home() {
                           </a>
                         </li>
                       </ul>
-                      <div className="menu-bar">
-                        <ul className="menu-links">
-                          <li className="active">
-                            <a href="#hero">Início</a>
-                          </li>
-                          <li>
-                            <a href="#para-voce">Para você</a>
-                          </li>
-                          <li>
-                            <a href="#para-empresa">Para sua empresa</a>
-                          </li>
-                          <li>
-                            <a href="#impacto">Por que VexiaRH</a>
-                          </li>
-                          <li>
-                            <a href="#cta">Pilotar</a>
-                          </li>
-                          <li>
-                            <Link href="/comunicacao">Conheça a Plataforma</Link>
-                          </li>
-                        </ul>
-                      </div>
+                        <div className="menu-bar">
+                          <button
+                            className="mobile-toggle"
+                            type="button"
+                            aria-label="Abrir menu"
+                            aria-expanded={menuOpen}
+                            onClick={() => setMenuOpen((v) => !v)}
+                          >
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </button>
+                          <ul className={`menu-links ${menuOpen ? "open" : ""}`}>
+                            <li className="active">
+                              <a href="#hero" onClick={closeMenu}>
+                                Início
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#para-voce" onClick={closeMenu}>
+                                Para você
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#para-empresa" onClick={closeMenu}>
+                                Para sua empresa
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#impacto" onClick={closeMenu}>
+                                Por que VexiaRH
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#cta" onClick={closeMenu}>
+                                Pilotar
+                              </a>
+                            </li>
+                            <li>
+                              <Link href="/comunicacao" onClick={closeMenu}>
+                                Conheça a Plataforma
+                              </Link>
+                            </li>
+                          </ul>
+                        </div>
                     </div>
                   </div>
                 </div>

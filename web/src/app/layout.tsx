@@ -71,10 +71,7 @@ export default function RootLayout({
           target="_blank"
           rel="noreferrer"
         >
-          <span className="whatsapp-icon">
-            <Image src="/demo-one-page/agency-02/images/whatsup/01.jpg" alt="WhatsApp" width={20} height={20} />
-          </span>
-          <span>WhatsApp</span>
+          <Image src="/demo-one-page/agency-02/images/whatsup/01.jpg" alt="WhatsApp" width={48} height={48} />
         </a>
       </body>
     </html>
