@@ -10,6 +10,26 @@ export default function Home() {
     if (pre) pre.style.display = "none";
   }, []);
 
+  useEffect(() => {
+    const headerOffset = 96;
+    const handler = (event: Event) => {
+      const anchor = event.currentTarget as HTMLAnchorElement;
+      const href = anchor.getAttribute("href");
+      if (!href || !href.startsWith("#")) return;
+      const id = href.slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      event.preventDefault();
+      const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+      window.scrollTo({ top, behavior: "smooth" });
+    };
+
+    const links = Array.from(document.querySelectorAll("a[href^=\"#\"]")) as HTMLAnchorElement[];
+    links.forEach((link) => link.addEventListener("click", handler));
+
+    return () => links.forEach((link) => link.removeEventListener("click", handler));
+  }, []);
+
   return (
     <>
       <div className="wrapper">
