@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Header } from "@/components/Header";
 
 const primary = "#005B63";
 const accent = "#F18921";
@@ -297,101 +298,54 @@ export default function Comunicacao() {
   };
 
   return (
-    <div className="wrapper">
+    <div className="flex flex-col min-h-screen bg-white pt-24">
       <script type="application/ld+json" suppressHydrationWarning>
         {JSON.stringify(jsonLd)}
       </script>
 
-      <header id="header" className="header default text-dark">
-        <div className="menu" id="onepagenav">
-          <nav id="menu" className="mega-menu">
-            <section className="menu-list-items">
-              <div className="container">
-                <div className="row">
-                  <div className="col-lg-12 col-md-12 position-relative d-flex align-items-center justify-content-between">
-                    <ul className="menu-logo mb-0">
-                      <li>
-                        <Link href="/" aria-label="Ir para a página inicial">
-                          <Image
-                            id="logo_img"
-                            src="/demo-one-page/agency-02/images/logo.png"
-                            alt="VexiaRH"
-                            width={148}
-                            height={42}
-                            priority
-                          />
-                        </Link>
-                      </li>
-                    </ul>
-                    <div className="menu-bar">
-                      <ul className="menu-links mb-0">
-                        <li>
-                          <Link href="/">Início</Link>
-                        </li>
-                        <li className="active">
-                          <a href="#hero">Conheça a Plataforma</a>
-                        </li>
-                        <li>
-                          <a href="#sessoes">Módulos</a>
-                        </li>
-                        <li>
-                          <a href="#resultados">Resultados</a>
-                        </li>
-                        <li>
-                          <a href="#faq">FAQ</a>
-                        </li>
-                        <li>
-                          <a href="#cta">Falar com a VexiaRH</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       {/* HERO */}
       <section
         id="hero"
-        className="page-section-ptb"
+        className="pt-16 pb-20 md:pt-24 md:pb-28"
         style={{
-          paddingTop: 140,
           background: "linear-gradient(135deg, #f7f9fb 0%, #ffffff 40%, #f7f9fb 100%)",
         }}
       >
-        <div className="container">
-          <div className="row align-items-center g-4">
-            <div className="col-lg-7">
-              <p
-                className="mb-10"
-                style={{ color: accent, letterSpacing: 1, fontWeight: 800, textTransform: "uppercase" }}
-              >
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-7">
+              <p className="mb-4 text-[var(--color-accent)] tracking-widest font-black uppercase text-sm md:text-base">
                 Plataforma VexiaRH
               </p>
 
-              <h1 className="mb-20" style={{ fontWeight: 900, color: primary, lineHeight: 1.08 }}>
+              <h1 className="mb-6 text-4xl md:text-5xl lg:text-[3.5rem] font-black leading-[1.08] text-[var(--color-primary)]">
                 Cultura, performance e operações de RH em um só lugar.
               </h1>
 
-              <p className="lead mb-20" style={{ color: "#475467" }}>
+              <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed font-light">
                 O VexiaRH conecta <strong>reconhecimento</strong>, <strong>aprendizado</strong>,{" "}
                 <strong>comunicação interna</strong> e <strong>processos operacionais</strong> para que o RH tenha
                 visibilidade, governança e impacto — com a identidade da sua empresa.
               </p>
 
-              <div className="d-flex flex-wrap gap-2">
-                <a className="button" style={{ background: accent, borderColor: accent }} href="#cta">
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <a
+                  className="bg-[var(--color-accent)] hover:bg-[#d97a1d] text-white px-8 py-4 rounded-xl font-bold text-center transition-all shadow-lg hover:-translate-y-1"
+                  href="#cta"
+                >
                   Pedir uma demo
                 </a>
-                <a className="button button-border" style={{ borderColor: primary, color: primary }} href="#sessoes">
+                <a
+                  className="bg-transparent hover:bg-gray-50 text-[var(--color-primary)] border-2 border-[var(--color-primary)] px-8 py-4 rounded-xl font-bold text-center transition-all"
+                  href="#sessoes"
+                >
                   Ver módulos
                 </a>
               </div>
 
-              <div className="d-flex flex-wrap gap-2 mt-3" style={{ color: "#667085", fontSize: 14 }}>
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-500 font-medium">
                 <span>• White-label</span>
                 <span>• Governança</span>
                 <span>• Analytics</span>
@@ -399,21 +353,13 @@ export default function Comunicacao() {
               </div>
             </div>
 
-            <div className="col-lg-5">
-              <div
-                style={{
-                  background: "#fff",
-                  borderRadius: 14,
-                  border: "1px solid #e2e8f0",
-                  padding: 20,
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
-                }}
-              >
-                <p className="mb-2" style={{ fontWeight: 800, color: primary }}>
+            <div className="lg:col-span-5">
+              <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
+                <p className="mb-4 text-xl font-black text-[var(--color-primary)]">
                   Ideal para organizações que querem
                 </p>
 
-                <ul className="mb-0" style={{ paddingLeft: 18, color: "#475467", lineHeight: 1.7 }}>
+                <ul className="list-disc pl-5 space-y-3 text-gray-600 text-[15px] leading-relaxed">
                   <li>Elevar engajamento e cultura com reconhecimento consistente.</li>
                   <li>Padronizar aprendizado e onboarding com trilhas e certificados.</li>
                   <li>Organizar comunicação interna em um canal oficial.</li>
@@ -426,60 +372,39 @@ export default function Comunicacao() {
       </section>
 
       {/* MODULES GRID */}
-      <section id="sessoes" className="page-section-ptb" style={{ background: "#fff" }}>
-        <div className="container">
-          <div className="row mb-40">
-            <div className="col-lg-8">
-              <h2 className="mb-10" style={{ color: primary, fontWeight: 900 }}>
-                Módulos do VexiaRH
-              </h2>
-              <p className="lead mb-0" style={{ color: "#475467" }}>
-                Explore as áreas da plataforma. Cada módulo foi pensado para ser implantado por etapas, conforme sua
-                maturidade e prioridade.
-              </p>
-            </div>
+      <section id="sessoes" className="py-20 md:py-28 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-[var(--color-primary)] mb-4 tracking-tight">
+              Módulos do VexiaRH
+            </h2>
+            <p className="text-lg md:text-xl text-gray-500 font-light">
+              Explore as áreas da plataforma. Cada módulo foi pensado para ser implantado por etapas, conforme sua
+              maturidade e prioridade.
+            </p>
           </div>
 
-          <div className="row gy-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {modules.map((item) => (
-              <div className="col-lg-4 col-md-6" key={item.title}>
-                <div
-                  className="p-3 h-100 shadow-sm"
-                  style={{
-                    borderRadius: 14,
-                    background: "#f8fafc",
-                    border: "1px solid #e2e8f0",
-                  }}
-                >
-                  <div
-                    style={{
-                      borderRadius: 12,
-                      background: "linear-gradient(135deg, #e2e8f0, #cbd5e1)",
-                      height: 180,
-                      marginBottom: 14,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "#334155",
-                      fontWeight: 800,
-                      textAlign: "center",
-                      padding: "0 12px",
-                    }}
-                    aria-hidden="true"
-                  >
+              <div key={item.title}>
+                <div className="bg-[#f8fafc] border border-gray-200 p-4 rounded-2xl h-full shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-gradient-to-br from-slate-200 to-slate-300 h-48 rounded-xl mb-5 flex items-center justify-center text-slate-700 font-black text-center px-4">
                     Preview do módulo
                   </div>
 
-                  <p className="mb-1" style={{ fontWeight: 900, color: primary }}>
+                  <h3 className="text-xl font-black text-[var(--color-primary)] mb-2">
                     {item.title}
-                  </p>
+                  </h3>
 
-                  <p className="mb-0" style={{ color: "#475467" }}>
+                  <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
                     {item.text}
                   </p>
 
                   {item.anchor ? (
-                    <a href={item.anchor} style={{ color: accent, fontWeight: 700, display: "inline-block", marginTop: 10 }}>
+                    <a
+                      href={item.anchor}
+                      className="text-[var(--color-accent)] font-bold inline-block hover:-translate-y-0.5 transition-transform"
+                    >
                       Ver detalhes →
                     </a>
                   ) : null}
@@ -491,55 +416,47 @@ export default function Comunicacao() {
       </section>
 
       {/* DETAILS */}
-      {details.map((detail) => (
-        <section key={detail.id} id={detail.id} className="page-section-ptb" style={{ background: "#fff" }}>
-          <div className="container">
-            <div className="row align-items-center g-4">
-              <div className="col-lg-6">
-                <p
-                  className="mb-10"
-                  style={{ color: accent, letterSpacing: 1, fontWeight: 900, textTransform: "uppercase" }}
-                >
+      {details.map((detail, index) => (
+        <section
+          key={detail.id}
+          id={detail.id}
+          className={`py-20 md:py-28 ${index % 2 === 0 ? "bg-white" : "bg-slate-50"}`}
+        >
+          <div className="container mx-auto px-4 md:px-6">
+            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${index % 2 !== 0 ? "lg:grid-flow-col-dense lg:direction-rtl" : ""}`}>
+              <div className={index % 2 !== 0 ? "lg:col-start-2" : ""}>
+                <p className="mb-4 text-[var(--color-accent)] tracking-widest font-black uppercase text-sm md:text-base">
                   {detail.title}
                 </p>
-                <h2 className="mb-15" style={{ color: primary, fontWeight: 900 }}>
+                <h3 className="text-3xl md:text-4xl font-black text-[var(--color-primary)] mb-6 leading-tight">
                   {detail.subtitle}
-                </h2>
+                </h3>
 
-                <ul style={{ color: "#475467", lineHeight: 1.75, paddingLeft: 18 }}>
+                <ul className="list-disc pl-5 space-y-3 text-gray-600 text-[15px] leading-relaxed mb-8">
                   {detail.bullets.map((b) => (
                     <li key={b}>{b}</li>
                   ))}
                 </ul>
 
-                <div className="d-flex flex-wrap gap-2 mt-3">
-                  <a className="button" style={{ background: accent, borderColor: accent }} href="#cta">
+                <div className="flex flex-wrap gap-4 mt-3">
+                  <a
+                    className="bg-[var(--color-accent)] hover:bg-[#d97a1d] text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-md hover:-translate-y-0.5"
+                    href="#cta"
+                  >
                     Quero ver em ação
                   </a>
-                  <a className="button button-border" style={{ borderColor: primary, color: primary }} href="#sessoes">
+                  <a
+                    className="bg-transparent hover:bg-gray-50 text-[var(--color-primary)] border-2 border-[var(--color-primary)] px-8 py-3.5 rounded-xl font-bold transition-all"
+                    href="#sessoes"
+                  >
                     Voltar aos módulos
                   </a>
                 </div>
               </div>
 
-              <div className="col-lg-6">
-                <div
-                  style={{
-                    borderRadius: 16,
-                    background: "linear-gradient(135deg, #e2e8f0, #cbd5e1)",
-                    height: 320,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#334155",
-                    fontWeight: 900,
-                    textAlign: "center",
-                    padding: "0 18px",
-                    border: "1px solid #e2e8f0",
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
-                  }}
-                >
-                  Imagem/print do módulo “{detail.title}”
+              <div className={index % 2 !== 0 ? "lg:col-start-1" : ""}>
+                <div className="bg-gradient-to-br from-slate-200 to-slate-300 rounded-2xl h-[320px] md:h-[400px] flex items-center justify-center text-slate-700 font-black text-center px-6 border border-slate-200 shadow-xl">
+                  Imagem/print do módulo "{detail.title}"
                 </div>
               </div>
             </div>
@@ -548,20 +465,18 @@ export default function Comunicacao() {
       ))}
 
       {/* OUTCOMES */}
-      <section id="resultados" className="page-section-ptb" style={{ background: "#f7f9fb" }}>
-        <div className="container">
-          <div className="row mb-40">
-            <div className="col-lg-8">
-              <h2 className="mb-10" style={{ color: primary, fontWeight: 900 }}>
-                O que muda na prática
-              </h2>
-              <p className="lead mb-0" style={{ color: "#475467" }}>
-                O VexiaRH organiza o “dia a dia” do RH e dá visibilidade para liderança — com menos ruído e mais clareza.
-              </p>
-            </div>
+      <section id="resultados" className="py-20 md:py-28 bg-[#f8fafc]">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-[var(--color-primary)] mb-4 tracking-tight">
+              O que muda na prática
+            </h2>
+            <p className="text-lg md:text-xl text-gray-500 font-light">
+              O VexiaRH organiza o “dia a dia” do RH e dá visibilidade para liderança — com menos ruído e mais clareza.
+            </p>
           </div>
 
-          <div className="row gy-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 title: "Engajamento mensurável",
@@ -580,61 +495,56 @@ export default function Comunicacao() {
                 text: "Férias, assets e pendências com rastreabilidade e fluxo de aprovações.",
               },
             ].map((item) => (
-              <div className="col-lg-3 col-md-6" key={item.title}>
-                <div className="p-4 h-100 bg-white shadow-sm" style={{ borderRadius: 14, borderTop: `3px solid ${accent}` }}>
-                  <h5 style={{ color: primary, marginBottom: 8, fontWeight: 900 }}>{item.title}</h5>
-                  <p className="mb-0" style={{ color: "#475467", lineHeight: 1.65 }}>
+              <div key={item.title}>
+                <article className="bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow h-full border-t-4 border-[var(--color-accent)]">
+                  <h3 className="text-xl font-bold text-[var(--color-primary)] mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-[15px] leading-relaxed">
                     {item.text}
                   </p>
-                </div>
+                </article>
               </div>
             ))}
           </div>
 
-          <div className="row mt-4">
-            <div className="col-lg-12">
-              <div
-                className="p-4 bg-white shadow-sm"
-                style={{ borderRadius: 14, border: "1px solid #e2e8f0" }}
-              >
-                <p className="mb-1" style={{ fontWeight: 900, color: primary }}>
-                  Prova social (opcional)
-                </p>
-                <p className="mb-0" style={{ color: "#475467" }}>
-                  Aqui você pode inserir logos, depoimentos e números (ex.: “X colaboradores ativos”, “Y treinamentos concluídos”)
-                  assim que tiver os dados e criativos.
-                </p>
-              </div>
+          <div className="mt-10">
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-200">
+              <p className="text-lg font-black text-[var(--color-primary)] mb-2">
+                Prova social (opcional)
+              </p>
+              <p className="text-gray-600">
+                Aqui você pode inserir logos, depoimentos e números (ex.: “X colaboradores ativos”, “Y treinamentos concluídos”)
+                assim que tiver os dados e criativos.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="page-section-ptb" style={{ background: "#fff" }}>
-        <div className="container">
-          <div className="row mb-40">
-            <div className="col-lg-8">
-              <h2 className="mb-10" style={{ color: primary, fontWeight: 900 }}>
-                Perguntas frequentes
-              </h2>
-              <p className="lead mb-0" style={{ color: "#475467" }}>
-                Dúvidas comuns de quem está avaliando a plataforma.
-              </p>
-            </div>
+      <section id="faq" className="py-20 md:py-28 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-[var(--color-primary)] mb-4 tracking-tight">
+              Perguntas frequentes
+            </h2>
+            <p className="text-lg md:text-xl text-gray-500 font-light">
+              Dúvidas comuns de quem está avaliando a plataforma.
+            </p>
           </div>
 
-          <div className="row gy-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {faqs.map((f) => (
-              <div className="col-lg-6" key={f.q}>
-                <div className="p-4 shadow-sm" style={{ borderRadius: 14, border: "1px solid #e2e8f0" }}>
-                  <p className="mb-2" style={{ fontWeight: 900, color: primary }}>
+              <div key={f.q}>
+                <article className="p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow bg-[#f8fafc] h-full">
+                  <h3 className="text-xl font-black text-[var(--color-primary)] mb-3">
                     {f.q}
-                  </p>
-                  <p className="mb-0" style={{ color: "#475467", lineHeight: 1.7 }}>
+                  </h3>
+                  <p className="text-gray-600 text-[15px] leading-relaxed">
                     {f.a}
                   </p>
-                </div>
+                </article>
               </div>
             ))}
           </div>
@@ -642,29 +552,36 @@ export default function Comunicacao() {
       </section>
 
       {/* CTA */}
-      <section id="cta" className="page-section-ptb text-white" style={{ background: primary }}>
-        <div className="container">
-          <div className="row align-items-center g-4">
-            <div className="col-lg-8">
-              <h2 className="mb-15" style={{ fontWeight: 900 }}>
+      <section id="cta" className="py-20 md:py-24 relative overflow-hidden bg-[var(--color-primary)]">
+        {/* Background Graphic elements */}
+        <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-[var(--color-accent)]/10 rounded-full blur-3xl"></div>
+
+        <div className="container relative z-10 mx-auto px-4 md:px-6">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+            <div className="lg:w-2/3 text-center lg:text-left">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
                 Quer ver o VexiaRH funcionando na prática?
               </h2>
-              <p className="mb-0" style={{ opacity: 0.95, lineHeight: 1.7 }}>
+              <p className="text-lg text-teal-50 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Fale com a gente e veja uma demo guiada com os módulos que fazem sentido para sua operação.
                 Se você já tiver materiais (prints, mockups, identidade visual), nós aplicamos aqui para deixar a página 100% fiel.
               </p>
             </div>
-            <div className="col-lg-4 text-lg-end">
-              <a className="button" style={{ background: accent, borderColor: accent }} href="mailto:contato@vexiarh.com.br">
+            <div className="lg:w-1/3 flex flex-col items-center lg:items-end w-full">
+              <a
+                className="inline-flex items-center justify-center bg-[var(--color-accent)] hover:bg-[#d97a1d] text-white px-8 py-5 rounded-xl font-bold text-lg transition-all w-full sm:w-auto shadow-lg hover:shadow-xl hover:-translate-y-1 mb-3"
+                href="mailto:contato@vexiarh.com.br"
+              >
                 Pedir demo por e-mail
               </a>
-              <div style={{ marginTop: 10, fontSize: 13, opacity: 0.9 }}>
+              <p className="text-sm text-teal-100/80 text-center lg:text-right">
                 Preferir WhatsApp/Calendly? Podemos adicionar aqui também.
-              </div>
+              </p>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 }
