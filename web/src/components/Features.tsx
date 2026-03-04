@@ -11,6 +11,8 @@ import {
     Briefcase,
     Database,
     Shield,
+    Users,
+    Target,
     LucideIcon,
 } from "lucide-react";
 
@@ -42,29 +44,34 @@ function FeatureCard({ icon: Icon, title, text }: FeatureProps) {
 export function EmployeeFeatures() {
     const features = [
         {
-            icon: Trophy,
-            title: "Reconhecimento Instantâneo",
-            text: "Elogios peer-to-peer e líder-colaborador que viram pontos para recompensas reais.",
+            icon: MessageSquare,
+            title: "Comunicação e Intranet",
+            text: "Feed Oficial com campanhas, atalhos úteis, políticas e comunicação segmentada para sua área.",
         },
         {
             icon: Gift,
-            title: "Loja de Recompensas",
-            text: "Catálogo com rastreio de pedidos em tempo real para dar valor concreto ao reconhecimento.",
+            title: "Reconhecimento e Recompensas",
+            text: "Elogios (peer-to-peer) que viram pontos, loja para troca por produtos e campanhas sazonais.",
         },
         {
             icon: GraduationCap,
-            title: "VexiaRH Academy",
-            text: "Treinamentos, trilhas de carreira e certificações com visibilidade do seu avanço.",
+            title: "Academy e Aprendizado",
+            text: "Trilhas completas de onboarding, cursos internos e certificados com acompanhamento de evolução.",
         },
         {
-            icon: MessageSquare,
-            title: "People Hub & Comunicação",
-            text: "Comunicados, rituais de clima e intranet organizada em um único lugar.",
+            icon: Target,
+            title: "Performance e Carreira",
+            text: "Check-ins de metas (OKRs), registro de feedbacks contínuos e visibilidade de crescimento.",
         },
         {
             icon: Umbrella,
-            title: "Autonomia no RH",
-            text: "Solicitação e acompanhamento de férias e licenças sem fricção.",
+            title: "Autonomia em Operações",
+            text: "Solicitação ágil de férias, licenças e acesso direto ao mural de vagas e oportunidades internas.",
+        },
+        {
+            icon: Users,
+            title: "Pessoas e Estrutura",
+            text: "Diretório completo de colaboradores e organograma para você se conectar com todo o time.",
         },
     ];
 
@@ -92,34 +99,34 @@ export function EmployeeFeatures() {
 export function CompanyFeatures() {
     const features = [
         {
-            icon: LineChart,
-            title: "Painéis de Engajamento",
-            text: "Dashboards para participação, talentos, lacunas e KPIs de pontos.",
+            icon: Shield,
+            title: "Segurança e Branding",
+            text: "Autenticação via Google/Firebase, controle por perfis e a identidade visual da sua marca (white-label).",
         },
         {
             icon: Wallet,
-            title: "Gestão de Cotas",
-            text: "Controle de orçamento de reconhecimento por time e período, com transparência.",
+            title: "Gestão do Reconhecimento",
+            text: "Controle de budget (cotas) por time, histórico de aprovações e rastreamento de resgates da loja.",
         },
         {
             icon: Presentation,
             title: "Administração da Academy",
-            text: "Curadoria de cursos, provas, trilhas e certificados sem sistemas paralelos.",
+            text: "Curadoria de treinamentos, trilhas de capacitação e aplicação de avaliações geridas internamente.",
+        },
+        {
+            icon: Target,
+            title: "Desempenho e Metas",
+            text: "Gestão centralizada de OKRs, acompanhamento de avaliação contínua e trilhas de carreira.",
         },
         {
             icon: Briefcase,
-            title: "People Hub & Operações",
-            text: "Comunicados, acessos, férias, ativos e vagas internas em um hub único.",
+            title: "Operações e Hub de RH",
+            text: "Aprovações de férias, controle de ativos/equipamentos e gestão centralizada de vagas internas.",
         },
         {
             icon: Database,
-            title: "Analytics & Relatórios",
-            text: "Relatórios operacionais e insights rápidos para decisões de gente.",
-        },
-        {
-            icon: Shield,
-            title: "White-label & Branding",
-            text: "Login seguro (Firebase) e branding dinâmico: logo, cores e mensagens da sua marca.",
+            title: "Analytics e KPIs de Gente",
+            text: "Painéis de engajamento, relatórios de alcance de campanhas e radar de pendências e auditoria.",
         },
     ];
 
