@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 export function CTA() {
     return (
@@ -20,16 +20,18 @@ export function CTA() {
                         </h2>
                         <p className="text-lg text-teal-50 font-light leading-relaxed max-w-2xl">
                             Configuramos valores, cotas e catálogo de recompensas. Medimos
-                            engajamento e adesão da equipe. Topa ver uma demo guiada?
+                            engajamento e adesão da equipe. Fale conosco para conhecer a plataforma.
                         </p>
                     </div>
                     <div className="lg:w-1/3 flex justify-start lg:justify-end w-full">
                         <Link
-                            href="mailto:contato@vexiarh.com.br"
+                            href="https://wa.me/5511985266582?text=Ol%C3%A1%2C%20quero%20conhecer%20a%20plataforma%20VexiaRH"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-3 bg-[var(--color-accent)] hover:bg-[#d97a1d] text-white px-8 py-5 rounded-xl font-bold text-lg transition-all w-full sm:w-auto shadow-lg hover:shadow-xl hover:-translate-y-1"
                         >
-                            Quero a demo
-                            <ArrowRight size={20} strokeWidth={2.5} />
+                            <MessageCircle size={20} strokeWidth={2.5} />
+                            Falar no WhatsApp
                         </Link>
                     </div>
                 </div>

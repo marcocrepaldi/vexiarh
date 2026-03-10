@@ -46,44 +46,45 @@ export function EmployeeFeatures() {
         {
             icon: MessageSquare,
             title: "Comunicação e Intranet",
-            text: "Feed Oficial com campanhas, atalhos úteis, políticas e comunicação segmentada para sua área.",
+            text: "Feed Oficial com campanhas, atalhos corporativos, políticas e Radar Inteligente de pendências.",
         },
         {
             icon: Gift,
-            title: "Reconhecimento e Recompensas",
-            text: "Elogios (peer-to-peer) que viram pontos, loja para troca por produtos e campanhas sazonais.",
+            title: "Reconhecimento Gamificado",
+            text: "Distribua Harper Points através de elogios peer-to-peer e resgate produtos ou prêmios na loja exclusiva.",
         },
         {
             icon: GraduationCap,
-            title: "Academy e Aprendizado",
-            text: "Trilhas completas de onboarding, cursos internos e certificados com acompanhamento de evolução.",
+            title: "Academy e Trilhas de Saber",
+            text: "Cursos internos e onboarding automatizado. Capacite e emita certificados com acompanhamento real.",
         },
         {
             icon: Target,
-            title: "Performance e Carreira",
-            text: "Check-ins de metas (OKRs), registro de feedbacks contínuos e visibilidade de crescimento.",
+            title: "Performance e Reflections",
+            text: "Check-ins de metas (OKRs), avaliações de desempenho (Reflections), feedbacks 360 e PDIs estruturados.",
         },
         {
             icon: Umbrella,
-            title: "Autonomia em Operações",
-            text: "Solicitação ágil de férias, licenças e acesso direto ao mural de vagas e oportunidades internas.",
+            title: "Hub de Operações e Benefícios",
+            text: "Concentre solicitações de Férias, Controle de ponto (Timekeeping), Reembolsos e gerenciamento de Ativos.",
         },
         {
             icon: Users,
-            title: "Pessoas e Estrutura",
-            text: "Diretório completo de colaboradores e organograma para você se conectar com todo o time.",
+            title: "Pessoas, Conexões e Vagas",
+            text: "Diretório de perfis, organograma dinâmico e mural de Vagas Internas para evolução constante.",
         },
     ];
 
     return (
-        <section id="para-voce" className="py-20 md:py-28 bg-[#f8fafc]" aria-labelledby="colab-title">
-            <div className="container mx-auto px-4 md:px-6">
+        <section id="para-voce" className="py-20 md:py-28 bg-[#f8fafc] relative overflow-hidden" aria-labelledby="colab-title">
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-transparent to-[var(--color-accent)] opacity-5 rounded-full blur-[100px] -z-0"></div>
+            <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="max-w-3xl mb-12 md:mb-16">
                     <h2 id="colab-title" className="text-3xl md:text-4xl font-black text-[var(--color-primary)] mb-4 tracking-tight">
                         Para você, colaborador
                     </h2>
                     <p className="text-lg md:text-xl text-gray-500 font-light">
-                        A jornada completa de reconhecimento, recompensas e desenvolvimento.
+                        Uma jornada empoderadora de reconhecimento, facilidades e desenvolvimento contínuo.
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -100,33 +101,33 @@ export function CompanyFeatures() {
     const features = [
         {
             icon: Shield,
-            title: "Segurança e Branding",
-            text: "Autenticação via Google/Firebase, controle por perfis e a identidade visual da sua marca (white-label).",
+            title: "Segurança e Automação Web",
+            text: "Design White-label exclusivo, painéis administrativos com autenticação via provedores confiáveis.",
         },
         {
             icon: Wallet,
-            title: "Gestão do Reconhecimento",
-            text: "Controle de budget (cotas) por time, histórico de aprovações e rastreamento de resgates da loja.",
+            title: "Gestão de Cotas e Orçamento",
+            text: "Acompanhe orçamentos de recompensas por centro de custo, histórico de resgates e integrações sistêmicas.",
         },
         {
             icon: Presentation,
-            title: "Administração da Academy",
-            text: "Curadoria de treinamentos, trilhas de capacitação e aplicação de avaliações geridas internamente.",
+            title: "Liderança na Academy corporativa",
+            text: "Administração de treinamentos, gestão de presenças, cadastro de trilhas completas e controle de proficiência.",
         },
         {
             icon: Target,
-            title: "Desempenho e Metas",
-            text: "Gestão centralizada de OKRs, acompanhamento de avaliação contínua e trilhas de carreira.",
+            title: "Governança de Metas e OKRs",
+            text: "Visões gerenciais consolidadas, relatórios de avaliações contínuas, calibração de performance e 9-box.",
         },
         {
             icon: Briefcase,
-            title: "Operações e Hub de RH",
-            text: "Aprovações de férias, controle de ativos/equipamentos e gestão centralizada de vagas internas.",
+            title: "Backoffice Automatizado",
+            text: "Aprovações de Reembolsos, Admissão/Férias, registro de Ativos (notebooks, etc) e Vagas (Internal Jobs).",
         },
         {
             icon: Database,
-            title: "Analytics e KPIs de Gente",
-            text: "Painéis de engajamento, relatórios de alcance de campanhas e radar de pendências e auditoria.",
+            title: "Painéis Analíticos e KPIs Humanos",
+            text: "Engajamento real-time, aderência a campanhas, demografia, retenção e o Radar Inteligente para os gestores.",
         },
     ];
 

@@ -5,14 +5,25 @@ export function Hero() {
     return (
         <section
             id="hero"
-            className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-white"
+            className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-slate-900"
         >
-            {/* Split Background Elements simulating the original design */}
-            <div className="absolute top-0 left-0 w-full md:w-2/3 h-full bg-[var(--color-primary)] z-0 rounded-br-[150px] shadow-2xl"></div>
-            <div className="absolute top-0 right-0 w-full md:w-[45%] h-full bg-[var(--color-accent)] z-0 block"></div>
+            {/* Abstract Background Image */}
+            <div className="absolute inset-0 z-0 opacity-40 mix-blend-luminosity">
+                <Image
+                    src="/vexiarh-abstract-bg.png"
+                    alt="VexiaRH Background"
+                    fill
+                    className="object-cover"
+                    priority
+                />
+            </div>
 
-            {/* Decorative wavy/circle shape on the right side over the orange to blend */}
-            <div className="hidden md:block absolute top-[-10%] right-[15%] w-[600px] h-[120%] bg-white/10 rounded-[100px] -rotate-12 z-0"></div>
+            {/* Split Background Elements for glassmorphism and readability */}
+            <div className="absolute top-0 left-0 w-full md:w-2/3 h-full bg-[var(--color-primary)]/80 backdrop-blur-md z-0 rounded-br-[150px] shadow-2xl"></div>
+            <div className="absolute top-0 right-0 w-full md:w-[45%] h-full bg-gradient-to-b from-[var(--color-accent)]/80 to-transparent z-0 block"></div>
+
+            {/* Decorative wavy/circle shape on the right side */}
+            <div className="hidden md:block absolute top-[-10%] right-[15%] w-[600px] h-[120%] bg-white/5 backdrop-blur-xl rounded-[100px] -rotate-12 z-0 border border-white/10"></div>
 
             <div className="container relative z-10 mx-auto px-4 md:px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -31,10 +42,12 @@ export function Hero() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
-                                href="#cta"
+                                href="https://wa.me/5511985266582?text=Ol%C3%A1%2C%20quero%20conhecer%20a%20plataforma%20VexiaRH"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="bg-[var(--color-accent)] hover:bg-[#d97a1d] text-white px-8 py-4 rounded-xl font-bold text-center transition-all shadow-lg hover:shadow-[0_8px_20px_rgba(241,137,33,0.3)] hover:-translate-y-1"
                             >
-                                Ver uma demo guiada
+                                Falar no WhatsApp
                             </a>
                             <a
                                 href="#para-voce"
@@ -47,11 +60,11 @@ export function Hero() {
 
                     {/* Right Image Block */}
                     <div className="relative h-[400px] md:h-[600px] w-full flex justify-end items-end z-10">
-                        {/* Notice: utilizing the custom background image placed by the user */}
+                        {/* Notice: utilizing the generated dashboard mockup */}
                         <div className="relative w-full h-full max-w-lg rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 transform md:-rotate-2 transition-transform hover:rotate-0 duration-500">
                             <Image
-                                src="/demo-one-page/agency-02/images/bg/02.jpg"
-                                alt="VexiaRH Profissional"
+                                src="/vexiarh-dashboard-mockup.png"
+                                alt="VexiaRH Plataforma Dashboard"
                                 fill
                                 className="object-cover object-center"
                                 priority
