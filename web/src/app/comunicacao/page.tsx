@@ -18,7 +18,8 @@ import {
   CircleDollarSign,
   FolderOpen,
   Network,
-  Building2
+  Building2,
+  Radar
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,26 +43,37 @@ export default function ComunicacaoIA() {
       icon: Target,
       title: "AI Performance Coach",
       text: "A IA analisa metas, check-ins, feedbacks e histórico de desenvolvimento para gerar orientações personalizadas de performance para colaboradores e gestores. Isso ajuda a identificar pontos de melhoria, acompanhar a evolução e apoiar os planos de desenvolvimento (PDIs).",
+      link: "/ai-performance-coach",
     },
     {
       icon: TrendingUp,
       title: "AI Career Coach",
       text: "A plataforma utiliza IA para apoiar o crescimento profissional dos colaboradores, sugerindo caminhos de desenvolvimento, competências a evoluir e as melhores ações para progresso efetivo de carreira dentro da empresa.",
+      link: "/ai-career-coach",
     },
     {
       icon: LineChart,
       title: "Insights automáticos para RH",
       text: "A IA analisa dados de toda a plataforma — como metas, treinamentos, engajamento e pesquisas internas — e gera relatórios automáticos e insights estratégicos para o RH e a liderança, identificando tendências e oportunidades de melhoria reais.",
+      link: "/insights-rh",
     },
     {
       icon: MessageSquareHeart,
       title: "Análise de Clima e Sentimento",
       text: "Nas pesquisas internas (pulse surveys), a IA é capaz de analisar as respostas e comentários abertos para identificar padrões de sentimento, o clima organizacional e detectar organicamente possíveis riscos sistêmicos de desengajamento.",
+      link: "/analise-clima",
     },
     {
       icon: FileText,
       title: "Automação de Análise de Documentos",
       text: "A plataforma utiliza IA para interpretar documentos enviados pelos colaboradores, como comprovantes, laudos ou arquivos administrativos, facilitando os processos burocráticos de RH e reduzindo drasticamente o trabalho puramente manual.",
+      link: "/automacao-documentos",
+    },
+    {
+      icon: Radar,
+      title: "Radar Inteligente",
+      text: "Atuando como um copiloto operante: notifica líderes sobre férias passivas vencendo e feedbacks atrasados, e instiga proativamente a auto-gestão do colaborador em metas, soft-skills e reconhecimento de pares.",
+      link: "/radar-inteligente",
     },
   ];
 
@@ -69,42 +81,50 @@ export default function ComunicacaoIA() {
     {
       icon: Users,
       title: "Controle do Time",
-      text: "Gestão completa de acessos corporativos, cotas de reconhecimento e base de dados do colaborador."
+      text: "Gestão completa de acessos corporativos, cotas de reconhecimento e base de dados do colaborador.",
+      link: "/controle-do-time",
     },
     {
       icon: Network,
       title: "Organograma Dinâmico",
-      text: "Visão estrutural imediata. Navegue por times, lideranças e departamentos em uma interface interativa."
+      text: "Visão estrutural imediata. Navegue por times, lideranças e departamentos em uma interface interativa.",
+      link: "/organograma",
     },
     {
       icon: Clock,
-      title: "Controle de Ponto",
-      text: "Registro de jornada fluido que permite gestão rápida de exceções, espelhos de ponto e banco de horas."
+      title: "Controle de Ponto na Web",
+      text: "Registro de jornada fluido via geolocalização. Permite gestão rápida de exceções (PTRP), espelhos de ponto brutose exportações fiscais AFD/AEJ (REP-P).",
+      link: "/controle-de-ponto",
     },
     {
       icon: Palmtree,
       title: "Central de Férias",
-      text: "Fluxos de aprovação logística de férias e licenças integrando liderados, líderes e o corporativo."
+      text: "Fluxos de aprovação logística de férias e licenças integrando liderados, líderes e o corporativo.",
+      link: "/central-de-ferias",
     },
     {
       icon: Laptop,
       title: "Gestão de Ativos",
-      text: "Controle de entrega, manutenção e recolhimento de hardwares (notebooks, etc) entregues aos funcionários."
+      text: "Controle de entrega, manutenção e recolhimento de hardwares (notebooks, etc) entregues aos funcionários.",
+      link: "/gestao-de-ativos",
     },
     {
       icon: CircleDollarSign,
       title: "Gestão de Folha e Reembolsos",
-      text: "Backoffice para provisão financeira, aprovação de reembolsos corporativos e dados consolidados para Folha de Pagamentos."
+      text: "Backoffice para provisão financeira, aprovação de reembolsos corporativos e dados consolidados para Folha de Pagamentos.",
+      link: "/folha-reembolsos",
     },
     {
       icon: FolderOpen,
       title: "Repositório de Documentos",
-      text: "O 'Harper Box'. Cofre digital de contratos, laudos e integrações que o RH armazena na ficha do funcionário."
+      text: "O 'Harper Box'. Cofre digital de contratos, laudos e integrações que o RH armazena na ficha do funcionário.",
+      link: "/repositorio-documentos",
     },
     {
       icon: Building2,
       title: "Controle de Fornecedores",
-      text: "Gestão centralizada de parceiros, recebedores, empresas terceiras e serviços que dão suporte à operação geral."
+      text: "Gestão centralizada de parceiros, recebedores, empresas terceiras e serviços que dão suporte à operação geral.",
+      link: "/controle-fornecedores",
     }
   ];
 
@@ -197,12 +217,17 @@ export default function ComunicacaoIA() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {aplicacoes.map((app, index) => (
-              <div key={index} className="bg-white p-8 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div key={index} className="bg-white p-8 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full">
                 <div className="w-14 h-14 bg-teal-50 text-[var(--color-primary)] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
                   <app.icon size={28} strokeWidth={2} />
                 </div>
                 <h3 className="text-xl font-black text-slate-900 mb-4">{app.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-[15px]">{app.text}</p>
+                <p className="text-slate-600 leading-relaxed text-[15px] flex-grow">{app.text}</p>
+                {app.link && (
+                  <a href={app.link} className="inline-flex items-center mt-6 text-[var(--color-primary)] font-bold hover:text-[var(--color-accent)] transition-colors">
+                    Saber mais <span className="ml-1">→</span>
+                  </a>
+                )}
               </div>
             ))}
           </div>
@@ -227,12 +252,17 @@ export default function ComunicacaoIA() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {operacoes.map((item, index) => (
-              <div key={index} className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-slate-300 hover:bg-slate-100 transition-colors group">
+              <div key={index} className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-slate-300 hover:bg-slate-100 transition-colors group flex flex-col h-full">
                 <div className="w-12 h-12 bg-white text-[var(--color-primary)] rounded-xl flex items-center justify-center mb-5 shadow-sm border border-slate-100">
                   <item.icon size={24} strokeWidth={2.5} />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-[14px]">{item.text}</p>
+                <h3 className="text-[17px] font-black tracking-tight text-slate-900 mb-3">{item.title}</h3>
+                <p className="text-slate-500 font-light text-sm leading-relaxed mb-4 flex-grow">{item.text}</p>
+                {item.link && (
+                  <a href={item.link} className="inline-flex items-center text-[var(--color-primary)] font-bold hover:text-[var(--color-accent)] transition-colors text-sm mt-auto">
+                    Saber mais <span className="ml-1">→</span>
+                  </a>
+                )}
               </div>
             ))}
           </div>
