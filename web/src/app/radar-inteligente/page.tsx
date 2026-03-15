@@ -5,10 +5,10 @@ import { Radar, BellRing, Target, Sun, MessageSquare, CheckCircle2 } from "lucid
 
 export const metadata: Metadata = {
   title: "Radar Inteligente | Copiloto para Gestores e Colaboradores | VexiaRH",
-  description: "Antecipe férias vencendo, cotas de reconhecimento expirando e gaps de feedback. O Radar Inteligente é sua central diária de lembretes e atuação preditiva de RH.",
+  description: "Antecipe pendencias de ferias, feedbacks, metas e outras rotinas com alertas e sinais acionaveis para gestores e colaboradores.",
   openGraph: {
     title: "Radar Inteligente da VexiaRH",
-    description: "Autocobrança para colaboradores e curadoria diária para líderes. O Radar da VexiaRH não deixa o desenvolvimento do seu time parar.",
+    description: "Central de alertas e nudges para apoiar rotina, cobrancas e acompanhamento continuo de pessoas e processos.",
     type: "website",
   },
   alternates: {
@@ -21,7 +21,7 @@ export default function RadarInteligente() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Radar Inteligente VexiaRH",
-    description: "Sistema de empurrões (nudges) automatizados baseados no ciclo de cada colaborador para lembretes de feedbacks, férias e metas estruturais.",
+    description: "Sistema de nudges e alertas automatizados com base no ciclo de cada colaborador para reforcar prioridades de rotina.",
     applicationCategory: "BusinessApplication",
     brand: {
       "@type": "Brand",
@@ -43,7 +43,7 @@ export default function RadarInteligente() {
     {
       icon: <Target className="text-orange-500 w-7 h-7" />,
       title: "Cobrança de Comportamento",
-      text: "Alerta aos gestores sobre tarefas pendentes, avaliações esquecidas ou inatividade suspeita no registro de metas dos liderados."
+      text: "Alertas para tarefas pendentes, avaliacoes em aberto ou baixa movimentacao em rotinas que exigem acompanhamento da lideranca."
     }
   ];
 
@@ -56,12 +56,12 @@ export default function RadarInteligente() {
     {
       icon: <Target className="text-blue-500 w-7 h-7" />,
       title: "Rotina Produtiva Guiada (Nudges)",
-      text: "Dicas dinâmicas focadas no calendário: metas e OKRs nas segundas/terças; PDI e curadoria de carreira nas quartas/quintas; trilhas de soft-skills nas sextas."
+      text: "Lembretes e orientacoes distribuidos ao longo da semana para apoiar metas, desenvolvimento, carreira e outras rotinas da jornada."
     },
     {
       icon: <MessageSquare className="text-purple-500 w-7 h-7" />,
       title: "Cultura de Reconhecimento",
-      text: "Se o colaborador ganhou cotas mensais (budget de reconhecimento) para distribuir e o prazo está expirando, o radar envia lembretes para ele não deixar de elogiar os pares."
+      text: "Quando ha cotas de reconhecimento proximas do vencimento, o sistema reforca o uso do ritual sem depender de cobrancas manuais."
     }
   ];
 
@@ -85,8 +85,7 @@ export default function RadarInteligente() {
               Radar Inteligente
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Nenhum prazo perdido, nenhum talento esquecido. Atuando como um assistente invisível que consolida tarefas
-              passivas do RH diretamente na Home de Gestores e Colaboradores.
+              Uma central de sinais e alertas para apoiar prioridades do dia a dia, reduzir esquecimentos e dar mais ritmo a rotinas importantes de RH e lideranca.
             </p>
           </div>
         </div>
@@ -103,8 +102,7 @@ export default function RadarInteligente() {
                 Para a Liderança
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed font-light">
-                Gestores são ocupados. O Radar extrai tarefas vitais do limbo corporativo e coloca na frente
-                deles em formato de <em>Cards de Ação Direta</em>. Não espere a revisão anual para agir.
+                O Radar ajuda a trazer pendencias relevantes para a rotina da lideranca, em formato de acoes claras e com contexto operacional.
               </p>
               <div className="space-y-6">
                 {leaderBenefits.map((benefit, i) => (
@@ -131,8 +129,7 @@ export default function RadarInteligente() {
                 Para o Colaborador
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed font-light">
-                Um estímulo de auto-gerenciamento amigável e focado no crescimento. O Radar envia nudges 
-                e dicas no melhor formato e tom para não gerar ansiedade.
+                O colaborador recebe lembretes e orientacoes objetivas para manter a jornada em dia sem depender de cobrancas reativas.
               </p>
               <div className="space-y-6">
                 {collaboratorBenefits.map((benefit, i) => (
@@ -161,20 +158,20 @@ export default function RadarInteligente() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">
-              Acabe com a Micropólitica da Lembrança
+              Menos dependencia de cobranca manual
            </h2>
            <div className="bg-slate-50 p-8 md:p-10 rounded-2xl shadow-sm border border-slate-200">
              <ul className="space-y-6">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-orange-500 w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-700 leading-relaxed text-[15px]">
-                    <strong>Sem poluição de E-mails:</strong> Os alertas do Radar vivem na tela inicial (Dashboard) da plataforma e não dependem de correntes de e-mail que são invariavelmente ignoradas por todos na companhia.
+                    <strong>Alertas no fluxo de trabalho:</strong> As notificacoes ficam na tela inicial e no contexto da plataforma, reduzindo dependencia de correntes de e-mail dispersas.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-orange-500 w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-700 leading-relaxed text-[15px]">
-                    <strong>Agendamento em 1-Clique:</strong> Apareceu que as férias de uma analista da equipe estão perto de vencer e o funcionário já possui uma balanço em banco alto? Há um botão direto no card do gestor para iniciar a solicitação compulsória imediatamente.
+                    <strong>Acao imediata:</strong> Quando uma pendencia exige resposta, o gestor pode partir do alerta para a rotina correspondente com menos friccao.
                   </span>
                 </li>
              </ul>

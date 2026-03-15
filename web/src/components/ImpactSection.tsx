@@ -1,50 +1,92 @@
 import React from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Clock3, Layers3, ShieldCheck } from "lucide-react";
 
 export function ImpactSection() {
-    const impacts = [
+    const pains = [
         {
-            title: "Impulsiona a cultura",
-            text: "Transforma valores em comportamentos diários mensuráveis.",
+            title: "Processos espalhados",
+            text: "Quando reconhecimento, documentos, ferias, ponto e performance vivem separados, o RH perde tempo costurando operacao.",
         },
         {
-            title: "Reduz churn & silos",
-            text: "Aumenta engajamento e pertencimento, fortalecendo o employer branding.",
+            title: "Pouca visibilidade para lideranca",
+            text: "Sem uma visao unica do time, gestores cobram tarde, perdem contexto e reagem quando o problema ja cresceu.",
         },
         {
-            title: "Eficiência para o RH",
-            text: "Centraliza processos, reduz tickets recorrentes e traz transparência.",
+            title: "Baixa capacidade de acao",
+            text: "Sem sinais claros, o RH demora para priorizar pendencias, riscos e ciclos que precisam de acompanhamento.",
+        },
+    ];
+
+    const differentials = [
+        {
+            icon: Layers3,
+            title: "Suite unificada",
+            text: "Engajamento, desenvolvimento e operacao de RH no mesmo ambiente, com menos retrabalho e menos troca de sistema.",
+        },
+        {
+            icon: Clock3,
+            title: "Rotina mais fluida",
+            text: "RH e lideranca acompanham pendencias, ciclos e processos com contexto, historico e prioridade mais claros.",
+        },
+        {
+            icon: ShieldCheck,
+            title: "Governanca operacional",
+            text: "Permissoes, trilhas, auditoria e controle de visibilidade para uma operacao mais segura e mais confiavel.",
         },
     ];
 
     return (
-        <section id="impacto" className="py-20 md:py-28 bg-[#f8fafc]">
+        <section id="impacto" className="bg-[#f8fafc] py-20 md:py-28">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="max-w-3xl mb-12 md:mb-16">
+                <div className="mb-12 max-w-3xl md:mb-16">
                     <h2 className="text-3xl md:text-4xl font-black text-[var(--color-primary)] mb-4 tracking-tight">
-                        Por que o VexiaRH?
+                        O que a VexiaRH resolve na pratica
                     </h2>
                     <p className="text-lg md:text-xl text-gray-500 font-light">
-                        Benefícios estratégicos e operacionais em uma única plataforma.
+                        A proposta nao e adicionar mais uma ferramenta. E conectar cultura, desenvolvimento e operacao em uma rotina acompanhavel.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                    {impacts.map((impact, i) => (
+
+                <div className="mb-10 grid gap-6 md:grid-cols-3 md:gap-8">
+                    {pains.map((pain) => (
                         <div
-                            key={i}
-                            className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300"
+                            key={pain.title}
+                            className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md"
                         >
-                            <div className="mb-4 text-emerald-500">
-                                <CheckCircle2 size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold text-[var(--color-primary)] mb-3">
-                                {impact.title}
-                            </h3>
-                            <p className="text-gray-600 leading-relaxed text-[15px]">
-                                {impact.text}
+                            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-accent)]">
+                                Dor recorrente
                             </p>
+                            <h3 className="mb-3 text-xl font-bold text-[var(--color-primary)]">
+                                {pain.title}
+                            </h3>
+                            <p className="text-[15px] leading-relaxed text-gray-600">{pain.text}</p>
                         </div>
                     ))}
+                </div>
+
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+                    {differentials.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                            <div
+                                key={item.title}
+                                className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md"
+                            >
+                                <div className="mb-4 text-emerald-500">
+                                    <Icon size={32} />
+                                </div>
+                                <h3 className="mb-3 text-xl font-bold text-[var(--color-primary)]">
+                                    {item.title}
+                                </h3>
+                                <p className="text-[15px] leading-relaxed text-gray-600">
+                                    {item.text}
+                                </p>
+                                <div className="mt-5 text-emerald-500">
+                                    <CheckCircle2 size={18} />
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

@@ -5,10 +5,10 @@ import { TrendingUp, Target, Award, Lightbulb, UserCheck, CheckCircle2 } from "l
 
 export const metadata: Metadata = {
   title: "AI Career Coach | VexiaRH",
-  description: "Conheça o AI Career Coach do VexiaRH. Inteligência artificial focada em potencializar as rotas de crescimento e o desenvolvimento de carreira dos colaboradores na sua empresa.",
+  description: "Use IA para apoiar desenvolvimento, sucessao e leitura de carreira com recomendacoes mais alinhadas ao contexto da empresa.",
   openGraph: {
     title: "AI Career Coach - Crescimento Direcionado",
-    description: "Direcione o desenvolvimento do time com trilhas de estudo e planos de progressão profissional indicados por Inteligência Artificial a partir de fit e skills.",
+    description: "Apoie desenvolvimento e sucessao com trilhas, recomendacoes e leitura mais clara sobre proximos passos de carreira.",
     type: "website",
   },
   alternates: {
@@ -21,7 +21,7 @@ export default function AICareerCoach() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "AI Career Coach - VexiaRH",
-    description: "Inteligência Artificial que atua ativamente no planejamento e acompanhamento da evolução da carreira do colaborador, cruzando metas com talentos.",
+    description: "Inteligencia artificial para apoiar planejamento e acompanhamento da evolucao de carreira do colaborador.",
     applicationCategory: "BusinessApplication",
     brand: {
       "@type": "Brand",
@@ -33,22 +33,22 @@ export default function AICareerCoach() {
     {
       icon: <Award className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Mapeamento de Competências",
-      text: "As habilidades são mapeadas continuamente ao final de cada avaliação, criando um gráfico de teia (radar) dinâmico do talento do funcionário."
+      text: "As habilidades podem ser acompanhadas ao longo dos ciclos para apoiar leitura de gaps, pontos fortes e evolucao de competencias."
     },
     {
       icon: <TrendingUp className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Autonomia na Progressão",
-      text: "O colaborador consegue enxergar quais requisitos o separam do próximo nível (Pleno, Sênior) e foca a sua energia de forma proativa."
+      text: "O colaborador passa a visualizar com mais clareza os requisitos e movimentos esperados para o proximo nivel."
     },
     {
       icon: <Target className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Cross-Metas em Planos de Desenvolvimento (PDIs)",
-      text: "Quando novos PDIs são criados, a IA sugere pautas e prazos calcados na curva de velocidade comum analisada no ecossistema da empresa."
+      text: "Ao criar PDIs, a IA ajuda a sugerir focos, prioridades e prazos coerentes com o contexto da empresa e do colaborador."
     },
     {
       icon: <Lightbulb className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Recomendação de Capacitação",
-      text: "Integração viva com a Vexia Academy: sugere automaticamente cursos e pílulas de leitura da Base de Conhecimento mediante gaps recentes."
+      text: "A integracao com a Academy ajuda a recomendar cursos, trilhas e conteudos aderentes aos gaps e objetivos observados."
     }
   ];
 
@@ -75,9 +75,7 @@ export default function AICareerCoach() {
               A.I. Career Coach
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Seus talentos mais valiosos não devem sair por falta de horizonte. 
-              Nossa tecnologia sugere <strong>caminhos de desenvolvimento nítidos</strong>, alinhando a ambição do 
-              colaborador aos objetivos do negócio.
+              O AI Career Coach ajuda a transformar desenvolvimento em um caminho mais claro, conectando competencias, ambicoes e prioridades do negocio.
             </p>
           </div>
         </div>
@@ -95,19 +93,17 @@ export default function AICareerCoach() {
                </div>
                <h3 className="text-2xl font-bold text-slate-800 mb-2">Plano de Sucessão Ativo</h3>
                <p className="text-slate-500 text-center text-sm px-6 max-w-sm">
-                 Visualização de competência para escalar posições de acordo com os requisitos em árvore gerados pela IA.
+                 Visao mais organizada sobre competencias e aderencia para apoiar sucessao e desenvolvimento interno.
                </p>
             </div>
 
             {/* Direita: Benefícios Listados */}
             <div>
               <h2 className="text-3xl font-black text-slate-900 mb-6">
-                Redesenhe o mapa do PDI com tecnologia viva
+                Desenvolvimento e carreira com mais contexto
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-                O AI Career Coach não substitui o mentor humano. Ele acelera o processo, poupando a equipe
-                de preencher matrizes desgastantes ao prever o <em>job fit</em> ideal para cada perfil 
-                em movimento na rotina organizacional.
+                O AI Career Coach nao substitui a conversa de carreira. Ele ajuda RH e lideranca a organizar informacoes, sugerir direcoes e reduzir o esforco de leitura para apoiar PDIs e movimentos internos.
               </p>
 
               <div className="space-y-6">
@@ -136,26 +132,26 @@ export default function AICareerCoach() {
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">
-              Apoio inestimável para Liderança de BPs
+              Apoio para RH e lideranca
            </h2>
            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100">
              <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-blue-500 w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-700 leading-relaxed text-[15px]">
-                    <strong>Risco de Turnover Mitigado:</strong> O modelo acusa estagnação de aprendizagem (skills gap longo). BPs conseguem engajar esses colaboradores antes mesmo deles abrirem mercado de trabalho.
+                    <strong>Leitura de risco de estagnacao:</strong> O modelo ajuda a identificar lacunas prolongadas de desenvolvimento para apoiar acao antes que o problema escale.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-blue-500 w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-700 leading-relaxed text-[15px]">
-                    <strong>Curadoria Mapeada Internamente:</strong> Se há escassez de liderança imediata, profissionais técnicos com aptidão analítica validada pelo modelo são destacados para receber curadoria direcional de Gestão e Cultura.
+                    <strong>Curadoria interna mais orientada:</strong> Em cenarios de sucessao, a plataforma ajuda a destacar perfis que merecem acompanhamento mais proximo para crescimento interno.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-blue-500 w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-700 leading-relaxed text-[15px]">
-                    <strong>Simetria e Justiça:</strong> O desenvolvimento é pautado por registros palpáveis de dados transacionados na plataforma, retirando vieses na construção de sucessões.
+                    <strong>Mais consistencia na conversa de carreira:</strong> O desenvolvimento pode ser apoiado por registros da plataforma, reduzindo subjetividade e ampliando contexto na tomada de decisao.
                   </span>
                 </li>
              </ul>

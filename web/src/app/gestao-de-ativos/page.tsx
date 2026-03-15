@@ -5,10 +5,10 @@ import { Laptop, PenTool, DatabaseBackup, ListChecks, Laptop2 } from "lucide-rea
 
 export const metadata: Metadata = {
   title: "Gestão Ativos e Termos de Uso | VexiaRH",
-  description: "Trilhe com confiança o inventário físico do escritório. Empréstimos de notebooks corporativos, celulares, e manutenção sem perder os fluxos de caixa de danos.",
+  description: "Centralize o inventario de notebooks, celulares e outros ativos com termos digitais, historico de responsabilidade e controle de manutencao.",
   openGraph: {
     title: "Gestão de Ativos - Controle de Máquinas",
-    description: "Logística inteligente de entrega de hardwares no Onboarding, Termos Eletrônicos de Responsabilidade e recolhimento perfeito com as assinaturas de baixa.",
+    description: "Controle entregas, devolucoes, termos de responsabilidade e manutencoes em uma jornada rastreavel para RH, Facilities e TI.",
     type: "website",
   },
   alternates: {
@@ -21,7 +21,7 @@ export default function GestaoDeAtivos() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Controle de Ativos e Hardwares",
-    description: "Módulo integrado à área de facilities e T.I para rastrear cadeiras giratórias do homeoffice, monitores e notebooks de alto custo atrelados na carteira do funcionário.",
+    description: "Modulo integrado a Facilities e TI para rastrear notebooks, monitores, celulares e outros ativos vinculados ao historico do colaborador.",
     applicationCategory: "BusinessApplication",
     brand: {
       "@type": "Brand",
@@ -33,22 +33,22 @@ export default function GestaoDeAtivos() {
     {
       icon: <Laptop2 className="text-slate-500 w-8 h-8" />,
       title: "Registro de Inventário Único",
-      text: "Esqueça perder a tela em que o funcionário assinou o empréstimo daquele Mac da empresa de 20 mil reais. Fichamos MAC Address, licenças, estado físico e seriais."
+      text: "Cada ativo fica registrado com numero de serie, configuracao, licencas, estado de conservacao e historico completo de movimentacao."
     },
     {
       icon: <PenTool className="text-slate-500 w-8 h-8" />,
       title: "Assinatura Eletrônica do Termo (LGPD)",
-      text: "No recebimento da máquina, o colaborador avaliza um Termo Digital validado por chave eletrônica. Garantindo a permissão de desconto em rescisão por extravios ou quebras."
+      text: "No recebimento do equipamento, o colaborador assina um termo digital com registro de aceite e responsabilidade, fortalecendo a governanca do processo."
     },
     {
       icon: <DatabaseBackup className="text-slate-500 w-8 h-8" />,
       title: "Manutenções, Conserto e Custos Contábeis",
-      text: "Quando a máquina vai para assistência técnica o sistema tira a responsabilidade direta dele e anota o histórico e provisão financeira gasta com T.I (CAPEX/OPEX)."
+      text: "Quando o equipamento segue para manutencao, o sistema atualiza o status, registra custos e preserva o historico operacional e contabil."
     },
     {
       icon: <ListChecks className="text-slate-500 w-8 h-8" />,
       title: "Bloqueio de Offboarding Crítico",
-      text: "Funcionário foi demitido remotamente? Caso o checklist do VexiaRH acuse um monitor ultrawide na ficha dele, o módulo avisa e trava a saída livre até o ativo regressar aos galpões."
+      text: "Nos desligamentos, a plataforma identifica ativos pendentes e ajuda a bloquear a conclusao do fluxo ate que a devolucao seja regularizada."
     }
   ];
 
@@ -72,7 +72,7 @@ export default function GestaoDeAtivos() {
               Gestão de Ativos
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Perder equipamentos pela casa de colaboradores remotos é sangrar dinheiro. O controle sólido de <strong>entrega e manutenção</strong> na plataforma evita evasões de material e resguarda todos por vias legais.
+              Centralize <strong>entrega, manutencao e devolucao</strong> de equipamentos com historico rastreavel e mais seguranca para RH, Facilities e TI.
             </p>
           </div>
         </div>
@@ -85,10 +85,10 @@ export default function GestaoDeAtivos() {
             
             <div className="order-2 md:order-1">
               <h2 className="text-3xl font-black text-slate-900 mb-6">
-                O Hardware amarrado ao CPF e não mais numa tabela vaga.
+                O inventario deixa de depender de planilhas paralelas.
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-                Ao enviar a cadeira de ergonomia e uma máquina caríssima aos profissionais de tecnologia do Brasil inteiro, o DP não pode ser punido pelo amadorismo. Aqui tudo recebe baixa automática com histórico inviolável de responsabilidade.
+                A distribuicao de equipamentos precisa de controle claro desde o onboarding ate o offboarding. Aqui, cada ativo recebe vinculo formal, historico de responsabilidade e rastreabilidade de ponta a ponta.
               </p>
 
               <div className="space-y-6">
@@ -116,7 +116,7 @@ export default function GestaoDeAtivos() {
                </div>
                <h3 className="text-2xl font-bold text-slate-800 mb-2">Cadeia de Custódia</h3>
                <p className="text-slate-500 text-center text-sm px-6 max-w-sm">
-                 Telas digitais e painéis exclusivos rastreando o equipamento desde o dia da compra na Nota até o fim do dia de seu descarte por depreciação pela contabilidade T.I.
+                 Painel unico para acompanhar ciclo de vida do ativo, termos assinados, manutencoes e devolucoes em uma visao operacional.
                </p>
             </div>
 

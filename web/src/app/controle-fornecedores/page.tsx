@@ -5,10 +5,10 @@ import { Building2, FileKey, Component, BookOpenCheck, Landmark } from "lucide-r
 
 export const metadata: Metadata = {
   title: "Controle Operacional de Fornecedores | VexiaRH",
-  description: "Traga terceiros essenciais, recebedores de repasse da operação, credenciados e parceiros sob o mesmo radar de processos e compliance de sua rede principal.",
+  description: "Centralize cadastro, documentos, contratos e acompanhamento de fornecedores e terceiros em uma unica visao operacional.",
   openGraph: {
     title: "Gestão de Terceirizados - Retenha as Rédeas",
-    description: "Centralize os dados das empresas de suporte logístico do seu BPO usando uma interface sólida focada no SLA de parceiro.",
+    description: "Acompanhe parceiros, obrigacoes documentais e informacoes operacionais de terceiros com mais clareza e governanca.",
     type: "website",
   },
   alternates: {
@@ -21,7 +21,7 @@ export default function ControleFornecedores() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Fornecedores e Terceiros da VexiaRH",
-    description: "Espelho do controle do DP só que focando em frentes empresariais integradas, contratos, licenças de prefeituras ativas e dependências da rede externa à empresa.",
+    description: "Gestao de terceiros, contratos, licencas e dependencias operacionais da rede externa a empresa.",
     applicationCategory: "SupplyChainApplication",
     brand: {
       "@type": "Brand",
@@ -33,22 +33,22 @@ export default function ControleFornecedores() {
     {
       icon: <Building2 className="text-rose-500 w-8 h-8" />,
       title: "Onboarding de CNPJ",
-      text: "Faça o cadastro direto de base jurídica dos escritórios parceiros que servem a você em pontas operacionais atrelando procuradores a esses CNPJs."
+      text: "Cadastre parceiros e prestadores com base juridica estruturada, vinculando representantes e informacoes essenciais ao CNPJ."
     },
     {
       icon: <FileKey className="text-rose-500 w-8 h-8" />,
       title: "Validação de Alvarás e Regulatório",
-      text: "Quando o SLA envolve que seu credenciado precise apresentar certidões e notas sem débito contábil todo mês. A plataforma rastreia e guarda o que foi fornecido pelas prestadoras."
+      text: "Acompanhe certidoes, licencas e documentos regulatorios exigidos para manter a relacao com terceiros em conformidade."
     },
     {
       icon: <Component className="text-rose-500 w-8 h-8" />,
       title: "Base Única e Conflito Zero",
-      text: "Evite fraudes e pagamentos cruzados para terceirizadas obscuras. Como estão controlados e rotulados em nossa base-pai corporativa, a prestação cruza pelo DP limpa."
+      text: "Consolide o cadastro de terceiros em uma base unica para reduzir ruido operacional e melhorar a leitura sobre pagamentos e vinculacoes."
     },
     {
       icon: <Landmark className="text-rose-500 w-8 h-8" />,
       title: "Extratos de Controle Contábil",
-      text: "Companhias de limpeza, T.I alocado em clientes, corretores associados ou prestadores comissados em BPO tem repasses e custos geridos na matriz oficial."
+      text: "A operacao passa a ter uma visao mais clara sobre repasses, custos e movimentacoes associadas a parceiros e prestadores."
     }
   ];
 
@@ -72,8 +72,7 @@ export default function ControleFornecedores() {
               Controle de Fornecedores
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Seu passivo e fragilidade pode morar fora de casa. Tenha as rédeas dos <strong>Terceirizados, BPOs e Recebedores</strong> 
-              que mantém sua operação respirando na ponta de serviços essenciais.
+              Traga <strong>fornecedores, terceiros e parceiros</strong> para uma mesma visao de cadastro, documentacao e acompanhamento operacional.
             </p>
           </div>
         </div>
@@ -90,16 +89,16 @@ export default function ControleFornecedores() {
                </div>
                <h3 className="text-2xl font-bold text-slate-800 mb-2">Riscos Minimizados</h3>
                <p className="text-slate-500 text-center text-sm px-6 max-w-sm">
-                 Checagem visual na plataforma se parceiros estão prestando e aderindo a normativas combinadas no Compliance Matriz x Terceirizada.
+                 Mais visibilidade para saber quais parceiros estao regulares, documentados e aderentes aos criterios da operacao.
                </p>
             </div>
 
             <div>
               <h2 className="text-3xl font-black text-slate-900 mb-6">
-                Rede de Serviço (BPO) Blindada no Corporativo
+                Mais controle sobre a rede externa da empresa
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-                Empresas que atuam com despachantes, prestadores de T.I de fora ou limpeza sofrem acionamentos solidários trabalhistas gravíssimos pela ignorância quanto aos contratos regentes em gavetas escondidas ou em nuvens perdidas sem vínculo formal.
+                Quando contratos, licencas e comprovantes de terceiros ficam dispersos, a empresa perde visibilidade e aumenta risco operacional. O modulo organiza essa frente em um fluxo mais controlado.
               </p>
 
               <div className="space-y-6">

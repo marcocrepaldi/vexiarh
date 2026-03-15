@@ -1,3 +1,4 @@
+import net from "net";
 import tls from "tls";
 import { NextResponse } from "next/server";
 
@@ -10,6 +11,21 @@ type ContactPayload = {
 
 const htmlResponse = (body: string, status = 200) =>
   new NextResponse(body, { status, headers: { "Content-Type": "text/html; charset=utf-8" } });
+
+const whatsappHref = (name: string, email: string, phone: string, message: string) => {
+  const text = [
+    "Ola, quero continuar o contato com a VexiaRH pelo WhatsApp.",
+    "",
+    `Nome: ${name}`,
+    `E-mail: ${email}`,
+    `WhatsApp: ${phone || "(nao informado)"}`,
+    "",
+    "Principal desafio:",
+    message,
+  ].join("\n");
+
+  return `https://wa.me/5511985266582?text=${encodeURIComponent(text)}`;
+};
 
 const smtpConfig = () => {
   const host = process.env.SMTP_HOST || "smtp0001.neo.space";
@@ -24,44 +40,157 @@ const smtpConfig = () => {
   return { host, port, user, pass, from, to };
 };
 
+const preferredPorts = (port: number) =>
+  Array.from(new Set([port, port === 465 ? 587 : 465]));
+
+const SMTP_TIMEOUT_MS = 8000;
+
+const waitForConnect = (socket: net.Socket | tls.TLSSocket) =>
+  new Promise<void>((resolve, reject) => {
+    const cleanup = () => {
+      socket.off("connect", onConnect);
+      socket.off("error", onError);
+      socket.off("timeout", onTimeout);
+    };
+    const onConnect = () => {
+      cleanup();
+      resolve();
+    };
+    const onError = (error: Error) => {
+      cleanup();
+      reject(error);
+    };
+    const onTimeout = () => {
+      cleanup();
+      reject(new Error("SMTP timeout while connecting"));
+    };
+    socket.setTimeout(SMTP_TIMEOUT_MS);
+    socket.once("connect", onConnect);
+    socket.once("error", onError);
+    socket.once("timeout", onTimeout);
+  });
+
+const connectSocket = async (host: string, port: number) => {
+  const socket =
+    port === 465
+      ? tls.connect({ host, port, servername: host })
+      : net.createConnection({ host, port });
+  await waitForConnect(socket);
+  return socket;
+};
+
+const upgradeToTls = async (socket: net.Socket, host: string) => {
+  const secureSocket = tls.connect({ socket, servername: host });
+  await waitForConnect(secureSocket);
+  return secureSocket;
+};
+
+const readResponse = (socket: net.Socket | tls.TLSSocket) =>
+  new Promise<string>((resolve, reject) => {
+    let buffer = "";
+
+    const cleanup = () => {
+      socket.off("data", onData);
+      socket.off("error", onError);
+      socket.off("close", onClose);
+      socket.off("timeout", onTimeout);
+    };
+
+    const finalize = () => {
+      const lines = buffer.split("\r\n").filter(Boolean);
+      const lastLine = lines.at(-1);
+      if (lastLine && /^\d{3} /.test(lastLine)) {
+        cleanup();
+        resolve(buffer);
+      }
+    };
+
+    const onData = (chunk: Buffer) => {
+      buffer += chunk.toString("utf8");
+      finalize();
+    };
+
+    const onError = (error: Error) => {
+      cleanup();
+      reject(error);
+    };
+
+    const onClose = () => {
+      cleanup();
+      reject(new Error("SMTP connection closed"));
+    };
+
+    const onTimeout = () => {
+      cleanup();
+      reject(new Error("SMTP timeout while waiting for response"));
+    };
+
+    socket.setTimeout(SMTP_TIMEOUT_MS);
+    socket.on("data", onData);
+    socket.once("error", onError);
+    socket.once("close", onClose);
+    socket.once("timeout", onTimeout);
+  });
+
+const expect = async (socket: net.Socket | tls.TLSSocket, code: number) => {
+  const response = await readResponse(socket);
+  if (!response.startsWith(String(code))) {
+    throw new Error(`SMTP unexpected response ${response.trim()}`);
+  }
+  return response;
+};
+
+const write = (socket: net.Socket | tls.TLSSocket, line: string) => socket.write(line);
+const b64 = (value: string) => Buffer.from(value, "utf8").toString("base64");
+
 const sendSmtpMail = async ({ subject, text }: { subject: string; text: string }) => {
   const { host, port, user, pass, from, to } = smtpConfig();
-  const socket = tls.connect({ host, port, servername: host });
+  const attempts = preferredPorts(port);
+  const errors: string[] = [];
 
-  const read = () =>
-    new Promise<string>((resolve, reject) => {
-      const cleanup = () => {
-        socket.off("data", onData);
-        socket.off("error", onErr);
-        socket.off("close", onClose);
-      };
-      const onData = (d: Buffer) => { cleanup(); resolve(d.toString()); };
-      const onErr = (e: Error) => { cleanup(); reject(e); };
-      const onClose = () => { cleanup(); reject(new Error("SMTP connection closed")); };
-      socket.once("data", onData);
-      socket.once("error", onErr);
-      socket.once("close", onClose);
-    });
+  for (const attemptPort of attempts) {
+    let socket: net.Socket | tls.TLSSocket | null = null;
 
-  const expect = async (code: number) => {
-    const res = await read();
-    if (!res.startsWith(String(code))) throw new Error(`SMTP unexpected response ${res.trim()}`);
-  };
-  const write = (l: string) => socket.write(l);
-  const b64 = (s: string) => Buffer.from(s, "utf8").toString("base64");
+    try {
+      socket = await connectSocket(host, attemptPort);
+      await expect(socket, 220);
+      write(socket, "EHLO vexiarh.com.br\r\n");
+      await expect(socket, 250);
 
-  await expect(220);
-  write(`EHLO vexiarh.com.br\r\n`); await expect(250);
-  write(`AUTH LOGIN\r\n`); await expect(334);
-  write(`${b64(user!)}\r\n`); await expect(334);
-  write(`${b64(pass!)}\r\n`); await expect(235);
-  write(`MAIL FROM:<${from}>\r\n`); await expect(250);
-  write(`RCPT TO:<${to}>\r\n`); await expect(250);
-  write("DATA\r\n"); await expect(354);
+      if (attemptPort !== 465) {
+        write(socket, "STARTTLS\r\n");
+        await expect(socket, 220);
+        socket = await upgradeToTls(socket as net.Socket, host);
+        write(socket, "EHLO vexiarh.com.br\r\n");
+        await expect(socket, 250);
+      }
 
-  const body = `From: ${from}\r\nTo: ${to}\r\nSubject: ${subject}\r\nContent-Type: text/plain; charset=utf-8\r\n\r\n${text}\r\n.`;
-  write(`${body}\r\n`); await expect(250);
-  write("QUIT\r\n"); socket.end();
+      write(socket, "AUTH LOGIN\r\n");
+      await expect(socket, 334);
+      write(socket, `${b64(user!)}\r\n`);
+      await expect(socket, 334);
+      write(socket, `${b64(pass!)}\r\n`);
+      await expect(socket, 235);
+      write(socket, `MAIL FROM:<${from}>\r\n`);
+      await expect(socket, 250);
+      write(socket, `RCPT TO:<${to}>\r\n`);
+      await expect(socket, 250);
+      write(socket, "DATA\r\n");
+      await expect(socket, 354);
+
+      const body = `From: ${from}\r\nTo: ${to}\r\nSubject: ${subject}\r\nContent-Type: text/plain; charset=utf-8\r\n\r\n${text}\r\n.`;
+      write(socket, `${body}\r\n`);
+      await expect(socket, 250);
+      write(socket, "QUIT\r\n");
+      socket.end();
+      return;
+    } catch (error) {
+      errors.push(`porta ${attemptPort}: ${error instanceof Error ? error.message : String(error)}`);
+      socket?.destroy();
+    }
+  }
+
+  throw new Error(`SMTP send failed (${errors.join(" | ")})`);
 };
 
 export async function POST(req: Request) {
@@ -99,7 +228,11 @@ export async function POST(req: Request) {
     return htmlResponse(`<p style="color:#34A853">Obrigado, ${safeName}! Recebemos sua mensagem.</p>`, 200);
   } catch (err) {
     console.error("SMTP error", err);
-    return htmlResponse('<p style="color:#EA4335">Não foi possível enviar agora. Tente novamente.</p>', 500);
+    const href = whatsappHref(name, email, phone, message);
+    return htmlResponse(
+      `<p style="color:#F59E0B">No momento, estamos com instabilidade no envio por e-mail. Para nao perder seu contato, continue pelo WhatsApp: ${href}</p>`,
+      202,
+    );
   }
 }
 

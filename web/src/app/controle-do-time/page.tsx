@@ -5,10 +5,10 @@ import { Users, UserPlus, Fingerprint, Coins, ShieldCheck, CheckCircle2 } from "
 
 export const metadata: Metadata = {
   title: "Controle do Time e Base de Colaboradores | VexiaRH",
-  description: "Centralize o onboarding, controle de perfis de acesso, e saldo de reconhecimento. A ficha limpa de todos os talentos da sua organização em um só lugar.",
+  description: "Centralize cadastro, onboarding, acessos e cotas de reconhecimento em uma base unica de colaboradores.",
   openGraph: {
     title: "Gestão Completa de Colaboradores - VexiaRH",
-    description: "Crie, edite e promova funcionários com facilidade, alterando hierarquias e distribuindo budget de reconhecimento na plataforma.",
+    description: "Administre perfis, hierarquias, acessos e informacoes centrais do time em uma unica estrutura.",
     type: "website",
   },
   alternates: {
@@ -21,7 +21,7 @@ export default function ControleDoTime() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Controle do Time VexiaRH",
-    description: "Gestão de fichas de funcionários, níveis de hierarquia do sistema e distribuição de cotas de incentivo.",
+    description: "Gestao de fichas de colaboradores, hierarquias, acessos e distribuicao de cotas de reconhecimento.",
     applicationCategory: "BusinessApplication",
     brand: {
       "@type": "Brand",
@@ -33,22 +33,22 @@ export default function ControleDoTime() {
     {
       icon: <UserPlus className="text-sky-500 w-8 h-8" />,
       title: "Onboarding Fluído",
-      text: "Cadastre um novo talento em segundos e gere os acessos do Google Workspace ou credenciais nativas automaticamente nas chaves do Perfil."
+      text: "Cadastre novos colaboradores com mais rapidez e conecte o onboarding a acessos e informacoes essenciais da jornada."
     },
     {
       icon: <Fingerprint className="text-sky-500 w-8 h-8" />,
       title: "Hierarquia de Acessos",
-      text: "Separe rigidamente as permissões: o que um Gestor de Área enxerga difere radicalmente dos módulos sensíveis liberados para um Administrador do DP."
+      text: "Defina visibilidade e permissoes por perfil, preservando modulos sensiveis e respeitando responsabilidades de cada papel."
     },
     {
       icon: <Coins className="text-sky-500 w-8 h-8" />,
       title: "Cotas de Reconhecimento",
-      text: "Atribua orçamento (moedas figurativas) nos perfis mensalmente. A base utiliza esse saldo para enviar feedbacks virtuais de 'Bom Trabalho' pelo mural logado."
+      text: "Distribua cotas de reconhecimento e conecte o saldo a rituais de elogio, cultura e recompensas dentro da plataforma."
     },
     {
       icon: <ShieldCheck className="text-sky-500 w-8 h-8" />,
       title: "LGPD Nativa",
-      text: "Campos de diversidade, salários base e anotações médicas guardadas com restrição máxima, seguindo frameworks atuais de anonimização e compliance."
+      text: "Campos sensiveis podem ser protegidos com regras de acesso e visibilidade mais restritas, reforcando seguranca e compliance."
     }
   ];
 
@@ -72,8 +72,7 @@ export default function ControleDoTime() {
               Controle do Time
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Sua fonte única da verdade para dados de RH. O <strong>Controle de Time</strong> não é apenas 
-              um cadastro: é a engrenagem que dita os acessos corporativos e limites financeiros de todo o site.
+              A base central de colaboradores da VexiaRH organiza <strong>cadastro, acessos, hierarquia e cotas</strong> em um unico ponto de controle.
             </p>
           </div>
         </div>
@@ -90,16 +89,16 @@ export default function ControleDoTime() {
                </div>
                <h3 className="text-2xl font-bold text-slate-800 mb-2">Ficha Limpa</h3>
                <p className="text-slate-500 text-center text-sm px-6 max-w-sm">
-                 Chega de cruzar planilhas fragmentadas. O colaborador preenche a base e a ficha unificada espalha os vínculos.
+                 Menos planilhas e cadastros duplicados. Uma ficha unica alimenta diferentes fluxos da operacao.
                </p>
             </div>
 
             <div>
               <h2 className="text-3xl font-black text-slate-900 mb-6">
-                Fundação para Operações Ágeis e Gestão Distribuída
+                A base que sustenta operacao, governanca e escala
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-                Antes de aprovar férias ou fazer matriz de sucessão com I.A, os dados e cargos devem estar firmados. O painel da VexiaRH agiliza o Offboarding bloqueando integrações na hora, sem deixar contas presas à mercê da falha humana ao final da rescisão.
+                Antes de operar ferias, desempenho, carreira ou acessos, a empresa precisa de uma estrutura confiavel de pessoas. O Controle do Time concentra esse nucleo e reduz falhas de cadastro, visibilidade e desligamento.
               </p>
 
               <div className="space-y-6">

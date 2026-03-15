@@ -5,10 +5,10 @@ import { FileText, Cpu, Eye, FileDigit, Zap, MonitorCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Automação de Documentos via IA | VexiaRH",
-  description: "Diga adeus à triagem humana e lentidão. Nossa IA extrai dados, valida atestados médicos, recibos, folhas de ponto e qualquer imagem na central documental para RH.",
+  description: "Automatize a leitura de atestados, recibos, notas e outros documentos com IA aplicada a triagem e validacao operacional.",
   openGraph: {
     title: "Leitura Automática de Documentos - IA",
-    description: "Análise Visual da VexiaRH de atestados de horas, vales, notas de reembolsos e contratos que enviam dados digitais sem transcrição manual.",
+    description: "IA para extrair dados de documentos, reduzir digitacao manual e acelerar triagem de processos de RH e backoffice.",
     type: "website",
   },
   alternates: {
@@ -21,7 +21,7 @@ export default function AutomacaoDocs() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Automação Extrativa em Documentos de RH",
-    description: "OCR IA da VexiaRH na qual robôs escaneiam atestados apontando a validade jurídica de um papel submetido em segundos.",
+    description: "OCR com IA para leitura, classificacao e validacao inicial de documentos submetidos na operacao de RH.",
     applicationCategory: "BusinessApplication",
     brand: {
       "@type": "Brand",
@@ -33,22 +33,22 @@ export default function AutomacaoDocs() {
     {
       icon: <Eye className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Visão Computacional (OCR / ICR Avançado)",
-      text: "Reconhecimento de caligrafia de médicos e números de CIDs ilegíveis usando algoritmos pré-treinados para evitar retrabalhos que as máquinas burras reprovariam."
+      text: "Reconhecimento de campos manuscritos e documentos de baixa qualidade para reduzir retrabalho e acelerar a leitura inicial."
     },
     {
       icon: <FileDigit className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Automação de Pré-Triagem de Reembolsos",
-      text: "Enviou a nota do restaurante corporativo? A IA extrai o CNPJ, data, valor exato e aponta distorções nas Políticas (Ex: Almoço às 00h30)."
+      text: "A IA extrai dados como CNPJ, data e valor, e sinaliza inconsistencias em relacao as regras da politica aplicada."
     },
     {
       icon: <MonitorCheck className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Alimentação do Banco de Horas em Frações",
-      text: "Atestou das 14h às 15:30? A análise computa que a ausência do Ponto corresponde a um abono, não desconto, cruzando com a agenda letiva do dia."
+      text: "A plataforma cruza horarios, justificativas e regras operacionais para apoiar a classificacao correta de ausencias e abonos."
     },
     {
       icon: <Zap className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Alerta Imediato de Fraude e Documentos Adulterados",
-      text: "Marcas d'água forjadas, datas arranhadas e CNPJs de clínicas que não constam em bases oficiais são flagrados e encaminhados para análise estrita de auditoria da sua equipe."
+      text: "Indicios de adulteracao, informacoes incoerentes e campos suspeitos podem ser sinalizados para revisao da equipe responsavel."
     }
   ];
 
@@ -72,8 +72,7 @@ export default function AutomacaoDocs() {
               Análise de Documentos
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Retire o fardo burocrático do analista e deixe a máquina auditar as laudas.
-              Da validação do CID de saúde no atestado à triagem do ticket de táxi, <strong>entregue velocidade</strong>.
+              Automatize a leitura inicial de documentos e reduza o tempo gasto com digitacao, triagem e validacoes repetitivas no backoffice.
             </p>
           </div>
         </div>
@@ -86,10 +85,10 @@ export default function AutomacaoDocs() {
             
             <div className="order-2 md:order-1">
               <h2 className="text-3xl font-black text-slate-900 mb-6">
-                Reduza SLAs Infinitos de Atendimento na Extranet
+                Mais velocidade para processos que ainda dependem de leitura manual
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-               Se a sua equipe de Departamento Pessoal passa 4 dias somando cupons de viagens para fechar a folha, algo estrutural está errado. A solução ótica da VexiaRH aprova centenas em menos de um minuto e bloqueia aqueles em desconformidade, entregando um montante linear e limpo para o Financeiro.
+               Se a equipe ainda precisa revisar documento por documento para fechar ponto, reembolsos ou validacoes de rotina, ha uma oportunidade clara de ganho operacional. A analise automatizada da VexiaRH acelera a triagem e destaca apenas os casos que pedem intervencao humana.
               </p>
 
               <div className="space-y-6">
@@ -117,7 +116,7 @@ export default function AutomacaoDocs() {
                </div>
                <h3 className="text-2xl font-bold text-slate-800 mb-2">Extração Limpa e Jurídica</h3>
                <p className="text-slate-500 text-center text-sm px-6 max-w-sm">
-                 Processamento que reconhece mais que campos padrão, mas também a coerência jurídica das informações preenchidas nas rubricas.
+                 Processamento estruturado para ler dados, apoiar conformidade e entregar uma base mais organizada para analise final.
                </p>
             </div>
 

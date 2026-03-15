@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Sistema de Controle de Ponto web baseado nas normativas do REP-P. Registro de jornada imutável, tratamento de ponto flexível e exportação fiscal automática.",
   openGraph: {
     title: "Controle de Ponto - Segurança e Agilidade",
-    description: "Batida de ponto com geolocalização e controle de NSR nativo. Trate exceções mantendo o dado bruto inalterado para gerar arquivos fiscais perfeitos.",
+    description: "Batida de ponto com geolocalizacao, trilha de auditoria e tratamento controlado das excecoes para apoiar conformidade trabalhista.",
     type: "website",
   },
   alternates: {
@@ -33,22 +33,22 @@ export default function ControleDePonto() {
     {
       icon: <ShieldCheck className="text-teal-500 w-8 h-8" />,
       title: "Registros Brutos Imutáveis (NSR)",
-      text: "Cada batida recebe uma assinatura imutável (Número Sequencial de Registro) por CNPJ. Nenhuma alteração corrompe o dado puro da entrada original do funcionário."
+      text: "Cada batida recebe um registro sequencial por CNPJ. O dado original permanece preservado, mesmo quando ha ajustes posteriores no tratamento."
     },
     {
       icon: <FileClock className="text-teal-500 w-8 h-8" />,
       title: "Tratamento de Ponto Restrito (PTRP)",
-      text: "Esqueceu de bater o ponto ou almoço? O gestor realiza o ajuste via Programa de Tratamento (PTRP), sendo exigida uma justificativa, mantendo total trilha de auditoria."
+      text: "Quando ha esquecimento ou divergencia, o ajuste passa por tratamento formal com justificativa e historico completo da intervencao."
     },
     {
       icon: <Landmark className="text-teal-500 w-8 h-8" />,
       title: "Geração de Fiscais: AFD e AEJ",
-      text: "Total conformidade com o Fisco e Sindicatos. Gere os arquivos (Arquivo Fonte de Dados e Arquivo Eletrônico de Jornada) mensais do estabelecimento em apenas um clique."
+      text: "O sistema apoia a geracao dos arquivos exigidos para fiscalizacao e auditoria, facilitando a rotina de fechamento por estabelecimento."
     },
     {
       icon: <MapPin className="text-teal-500 w-8 h-8" />,
       title: "Cercas Visuais e Geolocalização",
-      text: "Bloqueie ou exija registro de posição. Ao bater o ponto pelo dispositivo ou web, os dados de GPS podem ser exigidos e restritos a localidades (Metragem e raio de precisão)."
+      text: "A empresa pode exigir geolocalizacao e aplicar regras de registro por localidade, reforcando seguranca operacional em equipes externas ou distribuidas."
     }
   ];
 
@@ -72,9 +72,7 @@ export default function ControleDePonto() {
               Controle de Ponto Web
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Sua equipe bate o ponto na nuvem. Você gerencia distorções operacionais 
-              <strong> sem infligir a Legislação (REP-P). </strong>
-              Esqueça relógios quebrados e foque na auditoria.
+              Registre jornadas com mais seguranca, trate excecoes com rastreabilidade e mantenha a operacao alinhada as exigencias do <strong>REP-P</strong>.
             </p>
           </div>
         </div>
@@ -91,16 +89,16 @@ export default function ControleDePonto() {
                </div>
                <h3 className="text-2xl font-bold text-slate-800 mb-2">Espelho Blindado</h3>
                <p className="text-slate-500 text-center text-sm px-6 max-w-sm">
-                 Ao preencher faltas, adicionar atestados ou corrigir horários duplicados, nosso sistema insere anotações limpas, preservando as entradas cruas.
+                 Ajustes, atestados e correcoes ficam registrados sem perder o espelho original da jornada.
                </p>
             </div>
 
             <div>
               <h2 className="text-3xl font-black text-slate-900 mb-6">
-                Gerenciamento Operacional sem Margem para Erro Trabalhista
+                Controle operacional com mais previsibilidade juridica
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-                Esquecer a batida do horário de almoço é comum, e planilhas de correções geram passivos pesados (multas). Com nosso módulo, as solicitações do funcionário para justificar um dia chegam ao gestor que aprova as sobreposições na mesma hora.
+                Divergencias de jornada acontecem. O diferencial esta em tratar essas ocorrencias com fluxo adequado, justificativa, aprovacao e trilha de auditoria, em vez de depender de planilhas paralelas.
               </p>
 
               <div className="space-y-6">
@@ -136,13 +134,13 @@ export default function ControleDePonto() {
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-teal-500 w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-700 leading-relaxed text-[15px]">
-                    <strong>Estrutura de CNPJs (Estabelecimentos):</strong> Configure os horários em cada unidade filial de forma isolada, gerando NSR sequencial por razão social.
+                    <strong>Estrutura por estabelecimento:</strong> Configure regras e jornadas por unidade, mantendo controle separado por CNPJ quando necessario.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-teal-500 w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-700 leading-relaxed text-[15px]">
-                    <strong>Assinatura ICP-Brasil:</strong> Estruturação digital para o PDF do Art. 84 com padrão oficial do governo (Arquivo P7S).
+                    <strong>Estrutura documental:</strong> Apoio a rotinas documentais e comprovantes exigidos no contexto do espelho e da fiscalizacao.
                   </span>
                 </li>
              </ul>

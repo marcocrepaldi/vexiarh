@@ -5,10 +5,10 @@ import { Palmtree, CalendarCheck2, History, MessageSquareShare, FileSpreadsheet 
 
 export const metadata: Metadata = {
   title: "Gestão Central de Férias e Licenças | VexiaRH",
-  description: "Balanço de descansos, recibo compulsório e trâmites logísticos de período aquisitivo de Férias em uma fila de aprovação organizada entre líderes.",
+  description: "Organize solicitacoes, aprovacoes, periodos aquisitivos e conflitos de agenda em um fluxo unico de ferias e licencas.",
   openGraph: {
     title: "Central de Férias: Fluxo Descomplicado",
-    description: "Antecipe abonos, licenças de saúde e combine recesos do time, verificando o saldo direto do portal.",
+    description: "Traga mais clareza para saldos, aprovacoes e planejamento de ferias com visao para colaborador, lideranca e RH.",
     type: "website",
   },
   alternates: {
@@ -33,22 +33,22 @@ export default function CentralDeFerias() {
     {
       icon: <CalendarCheck2 className="text-amber-500 w-8 h-8" />,
       title: "Solicitações Self-Service",
-      text: "O funcionário simula abonos e escolhe seus blocos de dias via web ou celular. O sistema valida automaticamente as regras trabalhistas (ex: proibido começar dia útil que prece feriado) avisando do erro."
+      text: "O colaborador pode simular e solicitar ferias pelo portal, enquanto o sistema valida regras trabalhistas e reduz erros operacionais."
     },
     {
       icon: <History className="text-amber-500 w-8 h-8" />,
       title: "Visão do Período Aquisitivo Transparente",
-      text: "Dúvidas crônicas como 'Quantos dias de direito eu tenho mesmo?' e ligações estressantes ao DP acabam. O painel lista dias ganhos, usufruídos e data crítica para férias dobradas."
+      text: "O painel mostra dias adquiridos, usufruidos e datas sensiveis, dando mais transparencia para colaborador, lideranca e RH."
     },
     {
       icon: <MessageSquareShare className="text-amber-500 w-8 h-8" />,
       title: "Aprovações em Cascata de Gestores",
-      text: "O fluxo não cai no limbo cego de e-mails. Quando pedidas, a plataforma avisa os supervisores de primeiro escalão. Ao serem homologadas, elas fluem ao Backoffice automaticamente."
+      text: "As solicitacoes avancam por alcas de aprovacao com notificacoes claras e continuidade automatica para o backoffice."
     },
     {
       icon: <FileSpreadsheet className="text-amber-500 w-8 h-8" />,
       title: "Matriz de Conflitos do Time (Overlap)",
-      text: "Se 3 analistas tentarem feriar na mesma janela, o portal avisa a liderança, gerando um Kanban para acomodar o planejamento ideal e não estagnar as operações da conta cliente."
+      text: "Quando ha sobreposicao de ausencias, a lideranca recebe visibilidade para reorganizar a escala e preservar a operacao."
     }
   ];
 
@@ -72,8 +72,7 @@ export default function CentralDeFerias() {
               Central de Férias
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Retire as planilhas e o desgaste de negociar janelas difíceis. O <strong>Portal Unificado de Descanso</strong> da 
-              VexiaRH lida com as matemáticas da CLT e entrega fluxos pacíficos e diretos.
+              Tire as planilhas do processo e organize o ciclo de ferias com <strong>saldo, aprovacao e planejamento</strong> em uma unica jornada.
             </p>
           </div>
         </div>
@@ -91,17 +90,17 @@ export default function CentralDeFerias() {
                </div>
                <h3 className="text-2xl font-bold text-slate-800 mb-2">Descomplicando a Lei</h3>
                <p className="text-slate-500 text-center text-sm px-6 max-w-sm">
-                 Checagens nativas de leis estaduais, feriados nacionais e barreiras trabalhistas para bloqueio imediato caso o pedido contenha risco jurídico.
+                 Regras trabalhistas, janelas de descanso e validacoes de calendario aplicadas diretamente no fluxo da solicitacao.
                </p>
             </div>
 
             {/* Direita: Benefícios Listados */}
             <div>
               <h2 className="text-3xl font-black text-slate-900 mb-6">
-                Do Requerimento à Folha de Forma Visível
+                Do pedido ao processamento, com mais previsibilidade
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-                Esqueceram de assinar o Recibo Oficial impresso de Férias e a data limite de multa estourou? Pare de apagar incêndios. O balanço digital da Vexia integra prazos pré-notificando todos sobre os limites legais (DSR/Multas) e unifica na Folha.
+                O fluxo digital ajuda a acompanhar prazos, aprovacoes, recibos e riscos de passivo com mais clareza, reduzindo improviso e retrabalho na operacao.
               </p>
 
               <div className="space-y-6">

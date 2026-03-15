@@ -5,10 +5,10 @@ import { Target, Bot, LineChart, Shield, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "AI Performance Coach | VexiaRH",
-  description: "Conheça o AI Performance Coach do VexiaRH. Uma inteligência artificial desenhada para guiar líderes e colaboradores no acompanhamento de OKRs, feedbacks e evolução de carreira.",
+  description: "Use IA para apoiar ciclos de performance, acompanhamento de metas, feedbacks e leitura de desenvolvimento com mais contexto.",
   openGraph: {
     title: "AI Performance Coach - O Futuro da Gestão de Desempenho",
-    description: "Inteligência artificial integrada à sua plataforma de RH para apoiar rituais de feedback, sugerir check-ins de metas e potencializar a carreira do seu time.",
+    description: "IA aplicada a performance para ajudar lideres e RH a acompanhar metas, feedbacks e evolucao com mais clareza.",
     type: "website",
   },
   alternates: {
@@ -33,22 +33,22 @@ export default function AIPerformanceCoach() {
     {
       icon: <Bot className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Análise Inteligente de OKRs",
-      text: "A IA acompanha o progresso das metas e sugere ajustes ou correções de rota proativamente para os líderes e colaboradores."
+      text: "A IA acompanha o progresso das metas e ajuda a sinalizar desvios, ritmos e oportunidades de ajuste ao longo do ciclo."
     },
     {
       icon: <Target className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Sugestões de Feedback",
-      text: "Com base no histórico e nas entregas, o assistente ajuda gestores a estruturarem feedbacks mais construtivos e baseados em dados."
+      text: "Com base no historico e nas entregas, o assistente ajuda a estruturar feedbacks mais objetivos e bem contextualizados."
     },
     {
       icon: <LineChart className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Trilhas de Carreira Dinâmicas",
-      text: "Recomendações automáticas de cursos e passos para atingir o próximo nível da senioridade com base nas lacunas atuais."
+      text: "A plataforma recomenda proximos passos de desenvolvimento, cursos e movimentos coerentes com as lacunas observadas."
     },
     {
       icon: <Shield className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Privacidade e Contexto Seguro",
-      text: "Os dados de performance são processados com total segurança, respeitando as permissões corporativas e a LGPD."
+      text: "Os dados de performance respeitam as permissoes corporativas e sao processados dentro do contexto de acesso de cada papel."
     }
   ];
 
@@ -71,9 +71,7 @@ export default function AIPerformanceCoach() {
               AI Performance Coach
             </h1>
             <p className="text-xl text-gray-600 font-light leading-relaxed mb-10">
-              Eleve a gestão de desempenho com orientações baseadas em dados. O AI Coach do VexiaRH 
-              auxilia as lideranças na condução de reuniões de 1-on-1, análise de OKRs e construção 
-              de feedbacks impecáveis.
+              O AI Performance Coach ajuda a conduzir metas, 1-on-1s e feedbacks com orientacoes baseadas no contexto real do colaborador e do ciclo.
             </p>
           </div>
         </div>
@@ -97,13 +95,10 @@ export default function AIPerformanceCoach() {
             {/* Direita: Texto */}
             <div>
               <h2 className="text-3xl font-black text-[var(--color-primary)] mb-6">
-                Como o algoritmo apoia a cultura de desenvolvimento
+                Como a IA apoia a gestao de desempenho
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Nós acreditamos que a tecnologia não substitui a conexão humana, mas a potencializa. 
-                O AI Performance Coach funciona de maneira invisível no dia a dia, consolidando 
-                dados que tomariam horas de análise para que o gestor se concentre no que importa: 
-                <strong> as pessoas.</strong>
+                A proposta nao e substituir a conversa entre lider e colaborador. E sim reduzir tempo de leitura, resumir contexto e ajudar o gestor a chegar melhor preparado aos rituais de performance.
               </p>
 
               <div className="space-y-6">
@@ -139,19 +134,19 @@ export default function AIPerformanceCoach() {
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-emerald-500 w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700 leading-relaxed">
-                    <strong>Alinhamento Estratégico Contínuo:</strong> A IA monitora se as metas individuais (OKRs) estão atreladas aos objetivos corporativos e emite alertas caso haja desvios metodológicos.
+                    <strong>Alinhamento continuo:</strong> A IA ajuda a identificar se as metas individuais estao coerentes com os objetivos e com o ritmo esperado do ciclo.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-emerald-500 w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700 leading-relaxed">
-                    <strong>Sintetização de Feedbacks 360:</strong> Coleta percepções ao longo do ciclo de avaliação e gera um resumo estruturado e imparcial para a leitura do gestor no momento do comitê de calibração.
+                    <strong>Sintese de contexto:</strong> Percepcoes e registros do ciclo podem ser resumidos em uma leitura mais organizada para comites e rituais de calibracao.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-emerald-500 w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700 leading-relaxed">
-                    <strong>Interação em Linguagem Natural:</strong> Gestores podem "conversar" com a plataforma. Exemplo: <i>"Resuma a evolução do João nos últimos 6 meses com base nos reconhecimentos que ele recebeu."</i>
+                    <strong>Consulta em linguagem natural:</strong> Gestores podem pedir resumos e leituras orientadas, como a evolucao recente de um colaborador com base nos registros disponiveis.
                   </span>
                 </li>
              </ul>

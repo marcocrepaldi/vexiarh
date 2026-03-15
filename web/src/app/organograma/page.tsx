@@ -5,10 +5,10 @@ import { Network, ActivitySquare, MonitorPlay, Focus, Search } from "lucide-reac
 
 export const metadata: Metadata = {
   title: "Organograma Dinâmico Interativo | VexiaRH",
-  description: "Navegue pela estrutura da sua empresa sem precisar atualizar powerpoints mensais. O organograma da VexiaRH se desenha sozinho com base nas movimentações.",
+  description: "Visualize a estrutura da empresa com atualizacao automatica, busca por times e leitura clara de liderancas e areas.",
   openGraph: {
     title: "Organograma 3D de RH - Transparência",
-    description: "Visão estratégica instantânea de lideranças e equipes para melhorar a busca de contatos internos (Páginas Amarelas do time).",
+    description: "Visao atualizada de liderancas, reportes e areas para apoiar comunicacao interna e leitura da estrutura organizacional.",
     type: "website",
   },
   alternates: {
@@ -33,22 +33,22 @@ export default function OrganogramaDinamico() {
     {
       icon: <ActivitySquare className="text-indigo-500 w-8 h-8" />,
       title: "Desenhado pelo Sistema (Real-Time)",
-      text: "Ao alterar o cargo de um funcionário para 'Diretor', ou mudá-lo de C-Level, a arquitetura da árvore visual é reerguida automaticamente."
+      text: "A estrutura visual acompanha alteracoes de cargo, area e reporte automaticamente, sem depender de manutencao manual."
     },
     {
       icon: <MonitorPlay className="text-indigo-500 w-8 h-8" />,
       title: "Visão Fluida de Áreas",
-      text: "Companhias com milhares de vidas ficam impossíveis de enxergar em um PDF. Aplique zoom, desdobre ramos da matriz ou engavete áreas inteiras no clique."
+      text: "Em estruturas maiores, a navegacao permite expandir areas, aproximar contextos e explorar a hierarquia de forma mais pratica."
     },
     {
       icon: <Focus className="text-indigo-500 w-8 h-8" />,
       title: "Painel Focal do Colaborador",
-      text: "Clique em uma 'bolinha' da pessoa e a plataforma exibe uma Side-Panel com E-mail, Ramal, e dados públicos de contato (As Páginas Amarelas de quem acabou de entrar)."
+      text: "Ao selecionar uma pessoa, a plataforma exibe dados publicos e informacoes uteis para localizacao e conexao interna."
     },
     {
       icon: <Search className="text-indigo-500 w-8 h-8" />,
       title: "Pesquisa Universal de Times",
-      text: "Um analista júnior precisa achar quem lidera a contabilidade corporativa? A busca inteligente pisca o cargo exato no diagrama visual e mostra quem reporta a ele."
+      text: "A busca ajuda a localizar liderancas, cargos e times com mais rapidez, mesmo em estruturas organizacionais complexas."
     }
   ];
 
@@ -72,8 +72,7 @@ export default function OrganogramaDinamico() {
               Organograma Dinâmico
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Sabe aquelas pessoas novas cuja função você desconhece ou com quem elas trabalham?
-              O <strong>Organograma Integrado</strong> reduz fricções e conecta departamentos em uma visualização transparente.
+              O <strong>Organograma Integrado</strong> ajuda a visualizar liderancas, areas e relacoes de reporte sem depender de arquivos paralelos e atualizacoes manuais.
             </p>
           </div>
         </div>
@@ -88,18 +87,18 @@ export default function OrganogramaDinamico() {
                <div className="w-24 h-24 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
                  <Network className="w-12 h-12 text-indigo-600" />
                </div>
-               <h3 className="text-2xl font-bold text-slate-800 mb-2">Engajamento Espacial</h3>
+               <h3 className="text-2xl font-bold text-slate-800 mb-2">Leitura Estrutural Atualizada</h3>
                <p className="text-slate-500 text-center text-sm px-6 max-w-sm">
-                 Ao ser remanejado para novos squads, o senso de pertencimento muda visualmente na hora em que o funcionário acessar o sistema.
+                 Sempre que a estrutura muda, a visualizacao acompanha o cadastro organizacional e reduz ruido na comunicacao interna.
                </p>
             </div>
 
             <div>
               <h2 className="text-3xl font-black text-slate-900 mb-6">
-                Fim dos Desenhos Extensos e Cansativos no Visio
+                Menos manutencao manual, mais visibilidade organizacional
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-                O RH não devia passar horas montando blocos e arrastando linhas porque um analista mudou de área. Nosso diagrama é um reflexo cru e instantâneo da tabela "Chefe-Liderado" que opera em tempo real, respeitando políticas de exibição de dados.
+                O RH nao precisa mais atualizar organogramas manualmente sempre que ha mudancas de estrutura. O diagrama reflete a base organizacional e respeita politicas de exibicao de dados.
               </p>
 
               <div className="space-y-6">

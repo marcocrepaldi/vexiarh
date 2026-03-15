@@ -5,10 +5,10 @@ import { MessageSquareHeart, SmilePlus, Flame, Hash, Radar, HeartHandshake } fro
 
 export const metadata: Metadata = {
   title: "Análise de Clima e Sentimento via IA | VexiaRH",
-  description: "Traduza o clima organizacional em dados e ações corretivas reais com as análises NPS de inteligência artificial da VexiaRH baseada em textos abertos de pesquisa.",
+  description: "Transforme pesquisas e comentarios abertos em leitura mais clara de clima, sentimento e temas recorrentes com apoio de IA.",
   openGraph: {
     title: "Análise de Clima com IA - Pulse Surveys",
-    description: "Pesquisas de clima, engajamento e a análise de sentimentos abertos traduzidos pela IA.",
+    description: "Use IA para analisar pesquisas de clima, temas recorrentes e sinais de atencao na experiencia do colaborador.",
     type: "website",
   },
   alternates: {
@@ -21,7 +21,7 @@ export default function AnaliseClima() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Análise de Sentimentos VexiaRH",
-    description: "A IA categoriza sentimentos e padrões de linguagem nos resultados abertos do Pulses de Pesquisa e Feedbacks.",
+    description: "A IA categoriza sentimentos e padroes de linguagem em pesquisas, comentarios e feedbacks abertos.",
     applicationCategory: "BusinessApplication",
     brand: {
       "@type": "Brand",
@@ -33,22 +33,22 @@ export default function AnaliseClima() {
     {
       icon: <SmilePlus className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Análise de Naturalidade Linguística",
-      text: "Textos de feedbacks anônimos ou abertos têm seus sentimentos ponderados (positivo, neutro, frustrado) sem intervenção humana de triagem demorada."
+      text: "A IA interpreta comentarios anonimos ou abertos e ajuda a classificar o sentimento predominante com menos esforco manual."
     },
     {
       icon: <Flame className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Identificação de Tópicos (Tags)",
-      text: "Extrai sozindo os pontos centrais (ex.: 'salário', 'microgerenciamento', 'comunicação'). Evita o trabalho de ler e classificar centenas de respostas qualitativas de e-NPS."
+      text: "A plataforma identifica os temas mais frequentes nas respostas, facilitando a leitura de e-NPS, pulses e outras pesquisas qualitativas."
     },
     {
       icon: <Radar className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Mapa de Calor por Área",
-      text: "Cruza os dados da matriz. Se um líder muda para outra filial e a IA detecta uma mudança brusca da curva de tom dos times nas pesquisas em 3 meses, emite um alerta prévio de intervenção de clima."
+      text: "A IA cruza resultados por area e pode destacar mudancas de tom, concentracao de temas e sinais que merecem acompanhamento."
     },
     {
       icon: <Hash className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Anonimato Intacto",
-      text: "Resguarda estritamente a segurança e a garantia metodológica: o RH consome a consolidação de massa lida perfeitamente pela IA sem arranhar a privacidade da manifestação original do colaborador."
+      text: "A consolidacao preserva a privacidade da manifestacao individual, permitindo leitura agregada sem comprometer o anonimato da pesquisa."
     }
   ];
 
@@ -72,8 +72,7 @@ export default function AnaliseClima() {
               A.I. Análise de Clima
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Perguntas e comentários de clima em uma pesquisa geram calhamaços invisíveis.
-              Nossa I.A entra aqui: não apenas extraindo estatísticas, mas sentindo o real <strong>tom da sua equipe.</strong>
+              Pesquisas geram volume. A IA ajuda a transformar comentarios e respostas abertas em <strong>leitura mais clara de clima, sentimento e prioridade</strong>.
             </p>
           </div>
         </div>
@@ -90,16 +89,16 @@ export default function AnaliseClima() {
                </div>
                <h3 className="text-2xl font-bold text-slate-800 mb-2">Compreensão Contextual</h3>
                <p className="text-slate-500 text-center text-sm px-6 max-w-sm">
-                 I.A. treinada para entender as frustrações, conquistas operacionais e nuances linguísticas da corporação.
+                 Leitura assistida de comentarios para ajudar RH e lideranca a interpretar temas, tom e contexto com mais rapidez.
                </p>
             </div>
 
             <div>
               <h2 className="text-3xl font-black text-slate-900 mb-6">
-                Redução de 80% do tempo Analítico na Tabela Dinâmica
+                Menos tempo tabulando, mais tempo agindo
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-                Comitês de clima não precisam varar madrugadas separando reclamações na matriz corporativa do C-Level. Entregue ações, não extração de PDF! A I.A mastiga a massa consolidando os maiores vilões e heróis percebidos pelo quadro de funcionários.
+                Em vez de depender de leitura manual de dezenas ou centenas de comentarios, a equipe passa a ter uma consolidacao mais organizada dos temas que exigem resposta.
               </p>
 
               <div className="space-y-6">

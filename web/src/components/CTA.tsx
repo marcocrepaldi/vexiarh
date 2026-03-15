@@ -1,39 +1,60 @@
 import React from "react";
-import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import { LeadForm } from "@/components/LeadForm";
 
 export function CTA() {
+    const highlights = [
+        "Demonstracao guiada com foco no seu contexto operacional",
+        "Mapeamento dos modulos mais aderentes a sua empresa",
+        "Proxima conversa ja sai com direcionamento comercial claro",
+    ];
+
     return (
         <section
             id="cta"
             className="py-20 md:py-24 relative overflow-hidden bg-[var(--color-primary)]"
         >
-            {/* Background Graphic elements */}
             <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-[var(--color-accent)]/10 rounded-full blur-3xl"></div>
 
             <div className="container relative z-10 mx-auto px-4 md:px-6">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
-                    <div className="lg:w-2/3">
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
-                            Vamos rodar um piloto de 30 dias com um squad?
-                        </h2>
-                        <p className="text-lg text-teal-50 font-light leading-relaxed max-w-2xl">
-                            Configuramos valores, cotas e catálogo de recompensas. Medimos
-                            engajamento e adesão da equipe. Fale conosco para conhecer a plataforma.
+                <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+                    <div className="pt-2">
+                        <p className="mb-4 text-sm font-black uppercase tracking-[0.3em] text-[var(--color-accent)]">
+                            Proximo passo comercial
                         </p>
+                        <h2 className="mb-6 text-3xl font-black leading-tight text-white md:text-4xl lg:text-5xl">
+                            Veja como a VexiaRH pode funcionar na sua operacao.
+                        </h2>
+                        <p className="max-w-2xl text-lg font-light leading-relaxed text-teal-50">
+                            Agende uma demonstracao para entender como centralizar reconhecimento,
+                            desenvolvimento e processos de RH em uma unica plataforma.
+                        </p>
+
+                        <div className="mt-8 space-y-4">
+                            {highlights.map((item) => (
+                                <div key={item} className="flex items-start gap-3 text-white/85">
+                                    <CheckCircle2
+                                        size={18}
+                                        className="mt-1 shrink-0 text-[var(--color-accent)]"
+                                    />
+                                    <span className="leading-relaxed">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="mt-8 rounded-[1.75rem] border border-white/12 bg-white/6 p-6 text-white/78 backdrop-blur-xl">
+                            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/55">
+                                Ideal para
+                            </p>
+                            <p className="mt-3 text-lg leading-relaxed">
+                                Empresas que querem reduzir ferramentas espalhadas e ganhar uma
+                                visao mais clara sobre pessoas, cultura e operacao.
+                            </p>
+                        </div>
                     </div>
-                    <div className="lg:w-1/3 flex justify-start lg:justify-end w-full">
-                        <Link
-                            href="https://wa.me/5511985266582?text=Ol%C3%A1%2C%20quero%20conhecer%20a%20plataforma%20VexiaRH"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-3 bg-[var(--color-accent)] hover:bg-[#d97a1d] text-white px-8 py-5 rounded-xl font-bold text-lg transition-all w-full sm:w-auto shadow-lg hover:shadow-xl hover:-translate-y-1"
-                        >
-                            <MessageCircle size={20} strokeWidth={2.5} />
-                            Falar no WhatsApp
-                        </Link>
-                    </div>
+
+                    <LeadForm />
                 </div>
             </div>
         </section>

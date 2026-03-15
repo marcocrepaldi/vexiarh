@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Montserrat, Poppins } from "next/font/google";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -68,6 +69,7 @@ export default function RootLayout({
       </head>
       <body className={`${montserrat.variable} ${poppins.variable} font-sans`}>
         {children}
+        <Footer />
         <a
           href="https://wa.me/5511985266582?text=Quero%20saber%20mais%20sobre%20a%20VexiaRH"
           className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[1400] flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full shadow-[0_8px_20px_rgba(37,211,102,0.3)] hover:shadow-[0_12px_28px_rgba(37,211,102,0.45)] hover:-translate-y-1 hover:scale-105 transition-all duration-300"

@@ -5,10 +5,10 @@ import { LineChart, BarChart4, PieChart, Activity, Gauge, CheckCircle2 } from "l
 
 export const metadata: Metadata = {
   title: "Insights Automáticos para RH | VexiaRH",
-  description: "Conheça o módulo de Insights Automáticos da VexiaRH. Uma inteligência artificial desenhada para ler milhões de pontos de dado de RH em segundos e entregar os pontos-chave de gestão.",
+  description: "Use IA para cruzar sinais de desempenho, engajamento e aprendizagem e transformar dados de RH em leitura acionavel.",
   openGraph: {
     title: "Insights Automáticos para RH - Gestão Preditiva",
-    description: "Leia o comportamento dos times, adiantando problemas no clima organizacional com uma matriz de dados totalmente conectada.",
+    description: "Cruze dados da operacao de pessoas para apoiar analise, priorizacao e tomada de decisao no RH e na lideranca.",
     type: "website",
   },
   alternates: {
@@ -21,7 +21,7 @@ export default function InsightsRH() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Insights Automáticos VexiaRH",
-    description: "Análise avançada do ecossistema de RH (desempenho, engajamento e reconhecimento) provida por motores de Inteligência Artificial.",
+    description: "Analise avancada do ecossistema de RH com IA aplicada a desempenho, engajamento, reconhecimento e aprendizagem.",
     applicationCategory: "BusinessApplication",
     brand: {
       "@type": "Brand",
@@ -33,22 +33,22 @@ export default function InsightsRH() {
     {
       icon: <Activity className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Identificação Preditiva",
-      text: "Antes da queda no faturamento ou absenteísmo as ferramentas captam e correlacionam redução do uso do reconhecimento contínuo nas áreas de risco."
+      text: "A plataforma identifica sinais de atencao e ajuda a cruzar comportamento, engajamento e rotinas que merecem acompanhamento mais proximo."
     },
     {
       icon: <BarChart4 className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Descoberta de Talentos Silenciosos",
-      text: "A matriz revela quais colaboradores estão sustentando e distribuindo a cultura ativamente sem precisar que a liderança os indique."
+      text: "A leitura dos dados ajuda a revelar pessoas e movimentos que sustentam a cultura e o desempenho mesmo fora do radar mais evidente."
     },
     {
       icon: <PieChart className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Retorno da Academy (ROI Acadêmico)",
-      text: "Integra o esforço de treinamento a mudanças de comportamento. Os certificados resultam no batimento de metas mais rápido nos PDIs posteriores."
+      text: "Cruze aprendizagem com comportamento e evolucao para entender como trilhas e treinamentos se refletem na rotina do time."
     },
     {
       icon: <Gauge className="text-[var(--color-accent)] w-8 h-8" />,
       title: "Sinalizadores Vermelhos Automáticos",
-      text: "Envia resumos quinzenais da organização apontando líderes que pararam de registrar check-ins (1on1) com a primeira linha, por exemplo."
+      text: "Resumos e alertas ajudam a localizar liderancas, ciclos ou rotinas que perderam ritmo e precisam de acao."
     }
   ];
 
@@ -72,9 +72,7 @@ export default function InsightsRH() {
               Insights Automáticos
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Seu RH não deve perder dias tabulando dezenas de métricas. Nosso ambiente de Analytics é ativo:
-              <strong> a IA processa grandes volumes</strong> em tempo real, entregando relatórios precisos do seu time 
-              para tomada de decisão instantânea.
+              O objetivo nao e gerar mais dashboards, e sim transformar dados dispersos em <strong>leitura acionavel</strong> para RH e lideranca.
             </p>
           </div>
         </div>
@@ -92,17 +90,17 @@ export default function InsightsRH() {
                </div>
                <h3 className="text-2xl font-bold text-slate-800 mb-2">Painéis Prescritivos</h3>
                <p className="text-slate-500 text-center text-sm px-6 max-w-sm">
-                 Ao invés de linhas em planilhas cegas, cartões de alertas proativos resumem os KPIs.
+                 Em vez de depender de planilhas isoladas, a plataforma destaca sinais, tendencias e pontos de atencao com mais contexto.
                </p>
             </div>
 
             {/* Direita: Benefícios Listados */}
             <div>
               <h2 className="text-3xl font-black text-slate-900 mb-6">
-                Visibilidade Executiva da Cultura e Alta Liderança
+                Mais visibilidade para cultura, desempenho e decisao
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-                Com o volume cruzado dos módulos, o esforço da auditoria é inexistente. O CEO ou C-Level enxerga instantaneamente se as verbas (Budget) de incentivo da base estão refletindo no alcance de metas e aprendizado.
+                Ao cruzar dados de diferentes modulos, a lideranca ganha uma visao mais clara sobre o que esta funcionando, onde estao os riscos e quais movimentos merecem prioridade.
               </p>
 
               <div className="space-y-6">

@@ -1,6 +1,6 @@
 import React from "react";
+import Link from "next/link";
 import {
-    Trophy,
     Gift,
     GraduationCap,
     MessageSquare,
@@ -20,10 +20,11 @@ type FeatureProps = {
     icon: LucideIcon;
     title: string;
     text: string;
+    href?: string;
 };
 
-function FeatureCard({ icon: Icon, title, text }: FeatureProps) {
-    return (
+function FeatureCard({ icon: Icon, title, text, href }: FeatureProps) {
+    const content = (
         <article className="bg-white p-6 md:p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(0,0,0,0.08)] transition-all duration-300 border-t-4 border-[var(--color-accent)] h-full group hover:-translate-y-2">
             <div className="flex items-center mb-5">
                 <div
@@ -39,39 +40,55 @@ function FeatureCard({ icon: Icon, title, text }: FeatureProps) {
             <p className="text-gray-600 leading-relaxed text-[15px]">{text}</p>
         </article>
     );
+
+    if (href) {
+        return (
+            <Link href={href} className="block h-full">
+                {content}
+            </Link>
+        );
+    }
+
+    return content;
 }
 
 export function EmployeeFeatures() {
     const features = [
         {
             icon: MessageSquare,
-            title: "Comunicação e Intranet",
-            text: "Feed Oficial com campanhas, atalhos corporativos, políticas e Radar Inteligente de pendências.",
+            title: "Comunicacao e orientacoes em um so lugar",
+            text: "Campanhas, recados, atalhos, politicas e informacoes importantes sem depender de varios canais paralelos.",
+            href: "/funcionalidades/comunicacao-interna",
         },
         {
             icon: Gift,
-            title: "Reconhecimento Gamificado",
-            text: "Distribua Harper Points através de elogios peer-to-peer e resgate produtos ou prêmios na loja exclusiva.",
+            title: "Reconhecimento com recompensas",
+            text: "Elogios, pontos, loja e historico de resgates em uma experiencia simples para o colaborador e controlada para a empresa.",
+            href: "/funcionalidades/reconhecimento-e-recompensas",
         },
         {
             icon: GraduationCap,
-            title: "Academy e Trilhas de Saber",
-            text: "Cursos internos e onboarding automatizado. Capacite e emita certificados com acompanhamento real.",
+            title: "Academy e desenvolvimento continuo",
+            text: "Cursos, trilhas, onboarding e certificados em uma jornada de aprendizagem acompanhavel.",
+            href: "/funcionalidades/academy-corporativa",
         },
         {
             icon: Target,
-            title: "Performance e Reflections",
-            text: "Check-ins de metas (OKRs), avaliações de desempenho (Reflections), feedbacks 360 e PDIs estruturados.",
+            title: "Performance, reflexoes e carreira",
+            text: "Metas, ciclos de avaliacao, feedbacks e PDIs com contexto para colaborador, lideranca e RH.",
+            href: "/funcionalidades/performance-e-feedbacks",
         },
         {
             icon: Umbrella,
-            title: "Hub de Operações e Benefícios",
-            text: "Concentre solicitações de Férias, Controle de ponto (Timekeeping), Reembolsos e gerenciamento de Ativos.",
+            title: "Solicitacoes e rotinas do dia a dia",
+            text: "Ferias, ponto, reembolsos, documentos e ativos em um portal unico de autosservico.",
+            href: "/funcionalidades/central-de-ferias",
         },
         {
             icon: Users,
-            title: "Pessoas, Conexões e Vagas",
-            text: "Diretório de perfis, organograma dinâmico e mural de Vagas Internas para evolução constante.",
+            title: "Conexoes, perfis e vagas internas",
+            text: "Diretorio de pessoas, organograma e mobilidade interna para fortalecer a jornada dentro da empresa.",
+            href: "/funcionalidades/organograma-dinamico",
         },
     ];
 
@@ -81,11 +98,17 @@ export function EmployeeFeatures() {
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="max-w-3xl mb-12 md:mb-16">
                     <h2 id="colab-title" className="text-3xl md:text-4xl font-black text-[var(--color-primary)] mb-4 tracking-tight">
-                        Para você, colaborador
+                        Experiencia completa para o colaborador
                     </h2>
                     <p className="text-lg md:text-xl text-gray-500 font-light">
-                        Uma jornada empoderadora de reconhecimento, facilidades e desenvolvimento contínuo.
+                        Um portal unico para reconhecimento, desenvolvimento, solicitacoes e acompanhamento da propria jornada.
                     </p>
+                    <Link
+                        href="/funcionalidades"
+                        className="mt-6 inline-flex items-center gap-2 text-base font-bold text-[var(--color-primary)] transition hover:text-[var(--color-accent)]"
+                    >
+                        Ver catalogo completo de funcionalidades
+                    </Link>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {features.map((f, i) => (
@@ -101,33 +124,39 @@ export function CompanyFeatures() {
     const features = [
         {
             icon: Shield,
-            title: "Segurança e Automação Web",
-            text: "Design White-label exclusivo, painéis administrativos com autenticação via provedores confiáveis.",
+            title: "Governanca, acessos e seguranca",
+            text: "Permissoes por perfil, visibilidade por papel e administracao centralizada para cada frente da operacao.",
+            href: "/funcionalidades/controle-do-time",
         },
         {
             icon: Wallet,
-            title: "Gestão de Cotas e Orçamento",
-            text: "Acompanhe orçamentos de recompensas por centro de custo, histórico de resgates e integrações sistêmicas.",
+            title: "Reconhecimento com controle de cotas",
+            text: "Distribua pontos e recompensas com rastreabilidade, historico, carteira, orcamento e conciliacao operacional.",
+            href: "/funcionalidades/reconhecimento-e-recompensas",
         },
         {
             icon: Presentation,
-            title: "Liderança na Academy corporativa",
-            text: "Administração de treinamentos, gestão de presenças, cadastro de trilhas completas e controle de proficiência.",
+            title: "Academy corporativa com acompanhamento",
+            text: "Trilhas, presencas, cursos, certificados e progresso acompanhados por RH e lideranca.",
+            href: "/funcionalidades/academy-corporativa",
         },
         {
             icon: Target,
-            title: "Governança de Metas e OKRs",
-            text: "Visões gerenciais consolidadas, relatórios de avaliações contínuas, calibração de performance e 9-box.",
+            title: "Performance, metas e desenvolvimento",
+            text: "Ciclos de avaliacao, metas, calibracao, carreira e reflexoes com visao gerencial consolidada.",
+            href: "/funcionalidades/performance-e-feedbacks",
         },
         {
             icon: Briefcase,
-            title: "Backoffice Automatizado",
-            text: "Aprovações de Reembolsos, Admissão/Férias, registro de Ativos (notebooks, etc) e Vagas (Internal Jobs).",
+            title: "Operacao RH e backoffice no mesmo fluxo",
+            text: "Ferias, documentos, ativos, reembolsos, ponto e solicitacoes em um ambiente conectado a rotina real do RH.",
+            href: "/funcionalidades/reembolsos-e-despesas",
         },
         {
             icon: Database,
-            title: "Painéis Analíticos e KPIs Humanos",
-            text: "Engajamento real-time, aderência a campanhas, demografia, retenção e o Radar Inteligente para os gestores.",
+            title: "Analytics e IA aplicados a gestao",
+            text: "Sinais, rankings, analises e recomendacoes para apoiar priorizacao, cobrancas e tomada de decisao.",
+            href: "/funcionalidades/insights-automaticos",
         },
     ];
 
@@ -136,11 +165,17 @@ export function CompanyFeatures() {
             <div className="container mx-auto px-4 md:px-6">
                 <div className="max-w-3xl mb-12 md:mb-16">
                     <h2 id="empresa-title" className="text-3xl md:text-4xl font-black text-[var(--color-primary)] mb-4 tracking-tight">
-                        Para sua empresa, RH e liderança
+                        Para RH, lideranca e operacao
                     </h2>
                     <p className="text-lg md:text-xl text-gray-500 font-light">
-                        Eficiência, transparência e insights para gerir pessoas com dados.
+                        Menos ferramentas espalhadas, mais visibilidade sobre cultura, pessoas e processos criticos.
                     </p>
+                    <Link
+                        href="/funcionalidades"
+                        className="mt-6 inline-flex items-center gap-2 text-base font-bold text-[var(--color-primary)] transition hover:text-[var(--color-accent)]"
+                    >
+                        Explorar paginas por modulo
+                    </Link>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {features.map((f, i) => (

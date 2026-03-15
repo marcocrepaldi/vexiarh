@@ -41,10 +41,10 @@ export function Header() {
 
     const navLinks = [
         { id: "hero", label: "Início" },
-        { id: "para-voce", label: "Para você" },
-        { id: "para-empresa", label: "Para sua empresa" },
-        { id: "impacto", label: "Por que VexiaRH" },
-        { id: "cta", label: "Pilotar" },
+        { id: "para-empresa", label: "Para RH e lideranca" },
+        { id: "para-voce", label: "Experiencia do colaborador" },
+        { id: "impacto", label: "Diferenciais" },
+        { id: "cta", label: "Agendar demo" },
     ];
 
     return (
@@ -83,10 +83,16 @@ export function Header() {
                             );
                         })}
                         <Link
+                            href="/funcionalidades"
+                            className="text-gray-700 font-medium hover:text-[var(--color-primary)] transition-colors"
+                        >
+                            Funcionalidades
+                        </Link>
+                        <Link
                             href="/comunicacao"
                             className="text-[var(--color-primary)] font-bold hover:text-[var(--color-accent)] transition-colors"
                         >
-                            Conheça a Plataforma
+                            IA e operacao RH
                         </Link>
                     </nav>
 
@@ -122,11 +128,18 @@ export function Header() {
                     );
                 })}
                 <Link
+                    href="/funcionalidades"
+                    onClick={closeMenu}
+                    className="text-gray-800 text-lg font-medium py-3 border-b border-gray-50 hover:text-[var(--color-primary)] transition-colors"
+                >
+                    Funcionalidades
+                </Link>
+                <Link
                     href="/comunicacao"
                     onClick={closeMenu}
                     className="text-[var(--color-primary)] text-lg font-bold py-3 hover:text-[var(--color-accent)] transition-colors"
                 >
-                    Conheça a Plataforma
+                    IA e operacao RH
                 </Link>
             </div>
         </header>

@@ -5,10 +5,10 @@ import { CircleDollarSign, Receipt, ScrollText, CheckCircle2, DollarSign } from 
 
 export const metadata: Metadata = {
   title: "Gestão Financeira, Folha e Reembolsos | VexiaRH",
-  description: "Traga os lançamentos pontuais e adiantamentos da operação diária, comprovantes de reembolso e variáveis diretamente para quem vai fechar a folha limpa no final do mês.",
+  description: "Organize reembolsos, despesas variaveis e informacoes de apoio ao fechamento da folha com mais controle e rastreabilidade.",
   openGraph: {
     title: "Consolidação de Despesas & Folha Integrada",
-    description: "Um backoffice de adiantamentos salariais e reembolsos de viagens gerido 100% online sem troca de e-mails, indo do caixa à contabilização.",
+    description: "Centralize despesas, comprovantes, aprovacoes e consolidacao de informacoes para apoiar folha e financeiro.",
     type: "website",
   },
   alternates: {
@@ -21,7 +21,7 @@ export default function GestaoDeFolha() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Módulo Financeiro Pessoal VexiaRH",
-    description: "Reembolsos de quilometragem e almoço sobem a lógicas hierárquicas. Contabilidade do RH provisiona os desembolsos isolados na conta do colaborador.",
+    description: "Gestao de reembolsos, despesas e variaveis operacionais ligadas ao colaborador, com aprovacao e consolidacao para o financeiro.",
     applicationCategory: "BusinessApplication",
     brand: {
       "@type": "Brand",
@@ -33,22 +33,22 @@ export default function GestaoDeFolha() {
     {
       icon: <Receipt className="text-emerald-500 w-8 h-8" />,
       title: "Prestação de Contas Simplificada App/Web",
-      text: "Viagem na rua? O engenheiro sobe o bilhete da UBER pela plataforma e define rubricas, centros de custo contábil ou projetos do cliente onde vai cobrar aquela taxa."
+      text: "O colaborador envia comprovantes, informa categoria, centro de custo ou projeto e inicia o fluxo sem depender de e-mails soltos."
     },
     {
       icon: <CheckCircle2 className="text-emerald-500 w-8 h-8" />,
       title: "Aprovação Transparente de Despesas",
-      text: "Quando solicitado, chega ao VP na hora para dar ok nos R$500 do hotel, indo posteriormente para liquidação do Finanças da Matriz. Processo engavetado não mais."
+      text: "As despesas seguem por aprovacao com visibilidade de status, reduzindo gargalos e melhorando a previsibilidade para o financeiro."
     },
     {
       icon: <ScrollText className="text-emerald-500 w-8 h-8" />,
       title: "Extrato Direto na Ficha",
-      text: "Quando o financeiro paga o reembolso, avisa o funcionário que o TED ou PIX da Nota de Crédito da matrícula caiu, fechando o protocolo, aliviando o whatsapp de líderes."
+      text: "Quando o reembolso e liquidado, o historico fica atualizado para colaborador, lideranca e area financeira em um unico protocolo."
     },
     {
       icon: <DollarSign className="text-emerald-500 w-8 h-8" />,
       title: "Exportação Redonda para a Folha Nominal",
-      text: "Acabe com envios de Excel de Pró-labores, comissões espúrias de Ponto, horas extras e rubricas picadas. Consolidamos as provisões para importar em seu ERP em definitivo."
+      text: "As provisoes e variaveis podem ser consolidadas para apoiar importacao em ERP e rotinas de fechamento da folha."
     }
   ];
 
@@ -72,8 +72,7 @@ export default function GestaoDeFolha() {
               Gestão de Folha e Reembolsos
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Retire as cobranças mesquinhas de notas fiscais da portaria e insira um processo blindado, que entrega
-              o provisionamento perfeitamente na mão para a contabilidade operar na data-corte.
+              Organize despesas variaveis, comprovantes e reembolsos em um processo digital que entrega mais controle para RH, lideranca e financeiro.
             </p>
           </div>
         </div>
@@ -88,18 +87,18 @@ export default function GestaoDeFolha() {
                <div className="w-24 h-24 rounded-full bg-emerald-100 flex items-center justify-center mb-6">
                  <CircleDollarSign className="w-12 h-12 text-emerald-600" />
                </div>
-               <h3 className="text-2xl font-bold text-slate-800 mb-2">Folha Livre de Estresse (Fevereiro)</h3>
+               <h3 className="text-2xl font-bold text-slate-800 mb-2">Fechamento Mais Organizado</h3>
                <p className="text-slate-500 text-center text-sm px-6 max-w-sm">
-                 Ao invés de dias varando noites lançando planilhas pra fechar cálculos salariais, gere arquivos diretos para sistemas contábeis já chancelados por todo mundo até a diretoria.
+                 Menos planilhas paralelas e mais informacoes estruturadas para apoiar contabilizacao e folha.
                </p>
             </div>
 
             <div>
               <h2 className="text-3xl font-black text-slate-900 mb-6">
-                Transparência de Despesas Variáveis.
+                Transparencia para despesas variaveis e reembolsos
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-                Esquemas soltos geram perda de caixa. Na VexiaRH a nota obriga justificativa, categoria, verificação lógica pela liderança (o supervisor estava em viagem pra aquele projeto ali naquele dia?), gerando relatórios de gastos mensais onde o vazamento vai aparecer para o executivo principal.
+                Quando os comprovantes ficam dispersos, a empresa perde visibilidade e controle. Aqui, cada solicitacao segue com justificativa, categoria, aprovacao e historico para gerar leitura mais confiavel do gasto.
               </p>
 
               <div className="space-y-6">

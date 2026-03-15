@@ -5,10 +5,10 @@ import { FolderOpen, FileCheck2, UserCircle, Search, FileBadge } from "lucide-re
 
 export const metadata: Metadata = {
   title: "Repositório de Documentos | Harper Box | VexiaRH",
-  description: "Cofre digital corporativo atrelado ao registro do funcionário. Pare de perder contratos, CNHs ou arquivos físicos pelas gavetas.",
+  description: "Repositrio documental integrado ao cadastro do colaborador, com acesso controlado, organizacao por categoria e rastreabilidade para RH.",
   openGraph: {
     title: "Harper Box - Documentação Blindada",
-    description: "Cada CPF tem sua pasta viva com a vida pregressa de documentos para fins de compliance trabalhista digital.",
+    description: "Organize contratos, recibos, comprovantes e documentos obrigatorios em um repositorio centralizado e seguro.",
     type: "website",
   },
   alternates: {
@@ -21,7 +21,7 @@ export default function RepositorioDocumentos() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Repositório Eletrônico Harper Box",
-    description: "Cofre atrelado nativamente a base de usuários do VexiaRH gerando pastas GED para salvaguarda de contratos admissionais.",
+    description: "Repositorio ligado nativamente a base de usuarios do VexiaRH para guarda estruturada de contratos, recibos e documentos de RH.",
     applicationCategory: "DocumentManagementApplication",
     brand: {
       "@type": "Brand",
@@ -33,22 +33,22 @@ export default function RepositorioDocumentos() {
     {
       icon: <FileCheck2 className="text-amber-500 w-8 h-8" />,
       title: "Cofre por Matrícula (Dossiê Completo)",
-      text: "Se daqui 6 anos um processo exigir a ficha de EPIs e ASOs dele? Acesse a Box no perfil da matricula a 2 cliques e faça o download imaculado."
+      text: "Cada colaborador conta com um dossie completo, facilitando a localizacao de ASOs, contratos, fichas e outros documentos em poucos cliques."
     },
     {
       icon: <UserCircle className="text-amber-500 w-8 h-8" />,
       title: "Acesso Condicionado (Self-Service)",
-      text: "Bata o holerite ou informe de imposto e notifique os colaboradores. Eles retiram os recibos do portal sem implorar ou atrasar a menina do DP todo mês."
+      text: "Documentos como holerites e informes podem ser disponibilizados no portal com acesso controlado, reduzindo solicitacoes repetitivas ao DP."
     },
     {
       icon: <FileBadge className="text-amber-500 w-8 h-8" />,
       title: "Documentação Compulsória na Admissão",
-      text: "Quando a empresa envia o convite de vaga ao candidato pela Vexia, ele preenche os dados e faz upload compulsório das imagens: RG, Comprovantes de Base, Diplomas antes de iniciar a contar o primeiro dia."
+      text: "No fluxo de admissao, a empresa pode solicitar uploads obrigatorios de documentos antes do inicio da jornada do colaborador."
     },
     {
       icon: <Search className="text-amber-500 w-8 h-8" />,
       title: "Categorização Inteligente de Pastas",
-      text: "Evite sub-pastas perdidas no OneDrive confuso do RH. As pastas nascem padronizadas por metadados 'Termos de Contrato', 'Atestados de Ponto', 'ASOs Medicina'."
+      text: "As pastas nascem padronizadas por categoria e metadados, facilitando busca, auditoria e governanca documental."
     }
   ];
 
@@ -72,8 +72,7 @@ export default function RepositorioDocumentos() {
               Repositório de Documentos
             </h1>
             <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 max-w-3xl mx-auto">
-              Perder a folha de um contrato corporativo custoso é inaceitável. O <strong>Harper Box</strong> 
-              mantém o arquivo vivo da sua força de trabalho trancado e rastreável.
+              O <strong>Harper Box</strong> centraliza a documentacao do colaborador com organizacao, acesso controlado e rastreabilidade para a operacao de RH.
             </p>
           </div>
         </div>
@@ -86,10 +85,10 @@ export default function RepositorioDocumentos() {
             
             <div className="order-2 md:order-1">
               <h2 className="text-3xl font-black text-slate-900 mb-6">
-                GED sem depender do T.I Configurar Servidores
+                GED nativo, conectado ao cadastro do colaborador
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-                Companhias tentam criar wikis caras. Nós atrelamos o documento na fonte: o Perfil do RH da pessoa. Se há uma recisão amigável, o termo rescisório ficará pendurado lá pro DP corporativo arquivar. Fim de impressões desnecessárias.
+                Em vez de dispersar arquivos em drives e pastas paralelas, a documentacao fica ligada ao perfil da pessoa, com estrutura padronizada e menos dependencia de processos manuais.
               </p>
 
               <div className="space-y-6">
@@ -117,7 +116,7 @@ export default function RepositorioDocumentos() {
                </div>
                <h3 className="text-2xl font-bold text-slate-800 mb-2">Segurança Centralizada</h3>
                <p className="text-slate-500 text-center text-sm px-6 max-w-sm">
-                 Ao invés de Google Drive isolado, a caixa acusa se a matriz for alterada, tendo visibilidade baseada nos perfis diretos (Apenas RH vê salários).
+                 Controle de acesso por perfil e rastreio de alteracoes para dar mais seguranca a documentos sensiveis da operacao.
                </p>
             </div>
 

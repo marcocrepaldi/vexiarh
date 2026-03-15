@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
+import { CTA } from "@/components/CTA";
 import {
   Bot,
   BrainCircuit,
@@ -25,11 +26,11 @@ import {
 export const metadata: Metadata = {
   title: "A.I. na VexiaRH | Inteligência Artificial no RH",
   description:
-    "A VexiaRH utiliza inteligência artificial para transformar dados de gestão de pessoas em insights, recomendações e automações estratégicas.",
+    "Conheca como a VexiaRH aplica inteligencia artificial para apoiar analise, priorizacao e automacao na operacao de RH.",
   openGraph: {
     title: "Inteligência Artificial na VexiaRH",
     description:
-      "A IA atua como um copiloto para RH e liderança, oferecendo suporte para decisões mais rápidas e estratégicas.",
+      "A IA atua como camada de apoio para RH e lideranca, conectando dados, sinais e recomendacoes acionaveis.",
     type: "website",
   },
   alternates: {
@@ -42,37 +43,37 @@ export default function ComunicacaoIA() {
     {
       icon: Target,
       title: "AI Performance Coach",
-      text: "A IA analisa metas, check-ins, feedbacks e histórico de desenvolvimento para gerar orientações personalizadas de performance para colaboradores e gestores. Isso ajuda a identificar pontos de melhoria, acompanhar a evolução e apoiar os planos de desenvolvimento (PDIs).",
+      text: "A IA analisa metas, check-ins, feedbacks e historico de desenvolvimento para apoiar lideres e colaboradores na leitura da performance e dos proximos passos.",
       link: "/ai-performance-coach",
     },
     {
       icon: TrendingUp,
       title: "AI Career Coach",
-      text: "A plataforma utiliza IA para apoiar o crescimento profissional dos colaboradores, sugerindo caminhos de desenvolvimento, competências a evoluir e as melhores ações para progresso efetivo de carreira dentro da empresa.",
+      text: "A plataforma utiliza IA para sugerir caminhos de desenvolvimento, competencias prioritarias e acoes de carreira com base no contexto da empresa.",
       link: "/ai-career-coach",
     },
     {
       icon: LineChart,
       title: "Insights automáticos para RH",
-      text: "A IA analisa dados de toda a plataforma — como metas, treinamentos, engajamento e pesquisas internas — e gera relatórios automáticos e insights estratégicos para o RH e a liderança, identificando tendências e oportunidades de melhoria reais.",
+      text: "A IA cruza dados de metas, treinamentos, engajamento e pesquisas internas para gerar leitura mais rapida de tendencias, riscos e oportunidades.",
       link: "/insights-rh",
     },
     {
       icon: MessageSquareHeart,
       title: "Análise de Clima e Sentimento",
-      text: "Nas pesquisas internas (pulse surveys), a IA é capaz de analisar as respostas e comentários abertos para identificar padrões de sentimento, o clima organizacional e detectar organicamente possíveis riscos sistêmicos de desengajamento.",
+      text: "Nas pesquisas internas, a IA analisa respostas abertas e identifica padroes de sentimento, temas recorrentes e sinais de desengajamento.",
       link: "/analise-clima",
     },
     {
       icon: FileText,
       title: "Automação de Análise de Documentos",
-      text: "A plataforma utiliza IA para interpretar documentos enviados pelos colaboradores, como comprovantes, laudos ou arquivos administrativos, facilitando os processos burocráticos de RH e reduzindo drasticamente o trabalho puramente manual.",
+      text: "A plataforma usa IA para interpretar comprovantes, laudos e documentos administrativos, acelerando triagem e reduzindo trabalho manual.",
       link: "/automacao-documentos",
     },
     {
       icon: Radar,
       title: "Radar Inteligente",
-      text: "Atuando como um copiloto operante: notifica líderes sobre férias passivas vencendo e feedbacks atrasados, e instiga proativamente a auto-gestão do colaborador em metas, soft-skills e reconhecimento de pares.",
+      text: "O Radar ajuda a priorizar acoes ao notificar lideres sobre pendencias e reforcar rotinas importantes para colaboradores.",
       link: "/radar-inteligente",
     },
   ];
@@ -93,7 +94,7 @@ export default function ComunicacaoIA() {
     {
       icon: Clock,
       title: "Controle de Ponto na Web",
-      text: "Registro de jornada fluido via geolocalização. Permite gestão rápida de exceções (PTRP), espelhos de ponto brutose exportações fiscais AFD/AEJ (REP-P).",
+      text: "Registro de jornada com geolocalizacao, tratamento de excecoes e apoio a rotinas fiscais do REP-P.",
       link: "/controle-de-ponto",
     },
     {
@@ -117,7 +118,7 @@ export default function ComunicacaoIA() {
     {
       icon: FolderOpen,
       title: "Repositório de Documentos",
-      text: "O 'Harper Box'. Cofre digital de contratos, laudos e integrações que o RH armazena na ficha do funcionário.",
+      text: "Repositorio documental ligado ao cadastro do colaborador, com controle de acesso e organizacao por categoria.",
       link: "/repositorio-documentos",
     },
     {
@@ -129,11 +130,11 @@ export default function ComunicacaoIA() {
   ];
 
   const beneficios = [
-    { icon: Zap, label: "Reduzir tarefas manuais e operacionais do RH" },
-    { icon: BrainCircuit, label: "Gerar análises estratégicas de forma automática" },
-    { icon: ShieldCheck, label: "Apoiar decisões críticas de liderança com dados" },
-    { icon: Users, label: "Acelerar e otimizar o desenvolvimento dos colaboradores" },
-    { icon: Bot, label: "Melhorar o engajamento e a experiência fluida no trabalho" },
+    { icon: Zap, label: "Reduzir tarefas manuais e repetitivas do RH" },
+    { icon: BrainCircuit, label: "Gerar leitura acionavel com menos tempo de analise" },
+    { icon: ShieldCheck, label: "Apoiar decisoes de lideranca com mais contexto" },
+    { icon: Users, label: "Acelerar acompanhamento de desenvolvimento e performance" },
+    { icon: Bot, label: "Conectar IA a rotinas reais da operacao" },
   ];
 
   return (
@@ -154,18 +155,17 @@ export default function ComunicacaoIA() {
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 border border-teal-100 text-[var(--color-primary)] font-bold text-sm uppercase tracking-wider mb-6">
                 <BrainCircuit size={18} />
-                <span>O Futuro da Gestão de Pessoas</span>
+                <span>IA aplicada ao RH</span>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black leading-[1.1] text-slate-900 mb-6 tracking-tight">
-                Inteligência Artificial atuando como
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)]"> seu Copiloto</span> de RH.
+                Inteligencia Artificial conectada
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)]"> a rotina</span> de RH.
               </h1>
 
               <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed font-light">
-                A VexiaRH utiliza inteligência artificial de ponta para <strong>transformar dados de gestão em insights</strong>,
-                recomendações e automações que ajudam empresas a melhorarem drasticamente o engajamento,
-                o desenvolvimento e a performance dos seus colaboradores.
+                A VexiaRH aplica inteligencia artificial para <strong>apoiar analise, recomendacao e priorizacao</strong>,
+                transformando dados da plataforma em acoes mais claras para RH e lideranca.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -207,11 +207,10 @@ export default function ComunicacaoIA() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-3xl mb-16 text-center mx-auto">
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 tracking-tight">
-              Principais Vocações da IA na Plataforma
+              Onde a IA entra na plataforma
             </h2>
             <p className="text-lg text-slate-600 font-light">
-              A IA da VexiaRH não apenas automatiza rotinas, mas atua ativamente analisando informações da
-              plataforma e oferecendo <strong>suporte imediato para decisões mais rápidas e estratégicas</strong>.
+              A proposta nao e adicionar uma tecnologia isolada, e sim usar IA para apoiar rotinas que ja fazem parte da operacao de pessoas.
             </p>
           </div>
 
@@ -245,8 +244,7 @@ export default function ComunicacaoIA() {
               Operações e Backoffice Consolidado
             </h2>
             <p className="text-lg text-slate-600 font-light">
-              O dia a dia do RH também requer logística impecável. A VexiaRH unifica funções de ponta a ponta
-              para que gestores não precisem saltar entre diversos softwares e planilhas.
+              A IA ganha valor quando esta conectada a uma base operacional unica. Por isso a VexiaRH reune fluxos de ponta a ponta no mesmo ambiente.
             </p>
           </div>
 
@@ -285,7 +283,7 @@ export default function ComunicacaoIA() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
                 <p className="text-white font-bold text-xl drop-shadow-md">
-                  Mapeando conexões, performance e cultura em tempo real.
+                  Dados conectados para apoiar rotina, leitura e decisao.
                 </p>
               </div>
             </div>
@@ -293,10 +291,10 @@ export default function ComunicacaoIA() {
             {/* List Column */}
             <div className="order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 tracking-tight">
-                O Impacto Imediato da IA na VexiaRH
+                O impacto da IA quando ela nasce integrada
               </h2>
               <p className="text-xl text-slate-600 font-light mb-10">
-                A aplicação embarcada de Inteligência Artificial nos nossos módulos permite à sua empresa focar no que realmente importa: <strong>as pessoas</strong>.
+                Quando a IA esta ligada aos modulos e dados reais da operacao, ela deixa de ser conceito e passa a apoiar o que mais importa: <strong>execucao e pessoas</strong>.
               </p>
 
               <div className="space-y-6">
@@ -312,10 +310,10 @@ export default function ComunicacaoIA() {
 
               <div className="mt-12">
                 <a
-                  href="#hero"
+                  href="#cta"
                   className="inline-block bg-[var(--color-primary)] hover:bg-teal-900 text-white px-10 py-4 rounded-xl font-bold text-center transition-all shadow-lg hover:-translate-y-1"
                 >
-                  Falar com Especialistas sobre IA
+                  Agendar demonstracao
                 </a>
               </div>
             </div>
@@ -324,6 +322,7 @@ export default function ComunicacaoIA() {
         </div>
       </section>
 
+      <CTA />
     </div>
   );
 }

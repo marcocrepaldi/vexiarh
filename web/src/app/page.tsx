@@ -6,11 +6,11 @@ import { ImpactSection } from "@/components/ImpactSection";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "VexiaRH | Plataforma Completa de Cultura, Performance e Operações de RH",
-  description: "Aumente o engajamento do seu time com o VexiaRH. Uma plataforma white-label com reconhecimento, loja de recompensas, academy, férias, OKRs e analytics.",
+  title: "VexiaRH | Plataforma de RH, Performance e Operacao em um so lugar",
+  description: "Centralize reconhecimento, desenvolvimento, documentos, ferias, ponto, analytics e IA em uma plataforma feita para RH e lideranca.",
   openGraph: {
-    title: "VexiaRH | Plataforma Completa de Cultura e Operações",
-    description: "Reconhecimento, recompensas, academy, vagas internas e muito mais. O hub perfeito para a sua operação de pessoas.",
+    title: "VexiaRH | Plataforma para RH, lideranca e operacao",
+    description: "Uma plataforma unica para cultura, performance, autosservico do colaborador e operacao de RH.",
   }
 };
 
@@ -25,7 +25,7 @@ export default function Home() {
       "@type": "Offer",
       availability: "https://schema.org/PreOrder",
     },
-    description: "Plataforma SaaS white-label para integração de RH: ferramentas de comunicação interna, engajamento de pessoas, reconhecimento com recompensas, avaliação de performance e operações como solicitações de férias.",
+    description: "Plataforma SaaS para integrar reconhecimento, desenvolvimento, performance e operacao de RH em um unico ambiente.",
     brand: {
       "@type": "Brand",
       name: "VexiaRH"
@@ -42,8 +42,8 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <EmployeeFeatures />
         <CompanyFeatures />
+        <EmployeeFeatures />
         <ImpactSection />
         <CTA />
       </main>
