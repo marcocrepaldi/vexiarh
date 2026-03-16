@@ -43,15 +43,18 @@ export function LeadForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<SubmissionStatus>("idle");
   const [feedback, setFeedback] = useState("");
-  const [fallbackHref, setFallbackHref] = useState("https://wa.me/5511985266582?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20da%20VexiaRH");
+  const [fallbackHref, setFallbackHref] = useState(
+    "https://wa.me/5511985266582?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20da%20VexiaRH",
+  );
 
   const isDisabled = useMemo(
-    () => status === "loading" || !form.name || !form.email || !form.challenge,
+    () => status === "loading" || !form.name.trim() || !form.email.trim() || !form.challenge.trim(),
     [form.challenge, form.email, form.name, status],
   );
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     setStatus("loading");
     setFeedback("");
     setFallbackHref(buildWhatsappHref(form));
@@ -61,21 +64,23 @@ export function LeadForm() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "text/html, text/plain",
         },
         body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
+          name: form.name.trim(),
+          email: form.email.trim(),
+          phone: form.phone.trim(),
           message: [
-            `Empresa: ${form.company || "(nao informada)"}`,
+            `Empresa: ${form.company.trim() || "(nao informada)"}`,
             "",
             "Principal desafio:",
-            form.challenge,
+            form.challenge.trim(),
           ].join("\n"),
         }),
       });
 
-      const message = stripHtml(await response.text());
+      const responseText = await response.text();
+      const message = stripHtml(responseText);
 
       if (response.status === 202) {
         setStatus("fallback");
@@ -92,6 +97,9 @@ export function LeadForm() {
       setStatus("success");
       setFeedback(message || "Recebemos seu contato. Vamos retornar em breve.");
       setForm(initialState);
+      setFallbackHref(
+        "https://wa.me/5511985266582?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20da%20VexiaRH",
+      );
     } catch (error) {
       setStatus("error");
       setFeedback(
@@ -219,7 +227,7 @@ export function LeadForm() {
                 ? "border-emerald-400/35 bg-emerald-400/10 text-emerald-50"
                 : status === "fallback"
                   ? "border-amber-300/35 bg-amber-400/10 text-amber-50"
-                : "border-rose-300/30 bg-rose-400/10 text-rose-50"
+                  : "border-rose-300/30 bg-rose-400/10 text-rose-50"
             }`}
           >
             {feedback}
